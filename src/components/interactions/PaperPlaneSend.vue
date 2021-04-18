@@ -148,7 +148,7 @@ const StyledButton = styled("button", buttonProps)`
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  background: ${props =>
+  background: ${(props) =>
     props.sent ? "#6331D8" : props.clicked ? "#6331D8" : "#6331D8"};
   color: ${rgba("white", 0.85)};
   box-shadow: 0 11px 15px -7px ${rgba("#fff", 0.05)};
@@ -157,10 +157,12 @@ const StyledButton = styled("button", buttonProps)`
   transition: background 0.25s;
   overflow: hidden;
 
-  ${"" /* &:hover {
+  ${
+    "" /* &:hover {
     color: black;
     ${props => (!props.disabled ? "background: #07fde2;" : "")};
-  } */}
+  } */
+  }
 
   &:disabled {
     cursor: not-allowed;
@@ -176,9 +178,9 @@ const ButtonSendText = styled("span", buttonProps)`
   margin-left: 0.75rem;
   height: 56px;
   line-height: 56px;
-  transform: translate(${props => (props.sent ? "-12px" : "0")}, 0);
+  transform: translate(${(props) => (props.sent ? "-12px" : "0")}, 0);
 
-  ${props =>
+  ${(props) =>
     props.clicked
       ? `animation: ${buttonSendTextAnimation} ease-in-out
         ${animationDuration}`
@@ -188,10 +190,10 @@ const ButtonSendText = styled("span", buttonProps)`
 const ButtonIcon = styled("i", buttonProps)`
   font-size: 24px;
   line-height: 56px;
-  transform: translate(${props => (props.sent ? "-200px" : "0")}, 0);
+  transform: translate(${(props) => (props.sent ? "-200px" : "0")}, 0);
   color: ${rgba("white", 0.85)};
 
-  ${props =>
+  ${(props) =>
     props.clicked
       ? `animation: ${buttonIconAnimation} ease-in-out
         ${animationDuration}`
@@ -201,7 +203,7 @@ const ButtonIcon = styled("i", buttonProps)`
 const dotProps = { delay: String };
 const LoadingDot = styled("span", dotProps)`
   animation: ${loadingDotAnimation} infinite ${animationDuration};
-  animation-delay: ${props => props.delay};
+  animation-delay: ${(props) => props.delay};
 `;
 
 export default {
@@ -209,13 +211,13 @@ export default {
     StyledButton,
     ButtonSendText,
     ButtonIcon,
-    LoadingDot
+    LoadingDot,
   },
-  data: function() {
+  data: function () {
     return {
       clicked: false,
       sent: false,
-      completed: false
+      completed: false,
     };
   },
   methods: {
@@ -233,7 +235,7 @@ export default {
           this.clicked = false;
         }, 2000);
       }, animationDurationNumber * 1000);
-    }
-  }
+    },
+  },
 };
 </script>

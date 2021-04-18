@@ -107,7 +107,7 @@ const ProjectCard = styled("a", styleProps)`
   align-items: center;
   padding: 2rem 1.5rem;
   border-radius: 0.5rem;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
   color: white;
   margin: 0 1rem;
   transition: transform 0.35s;
@@ -228,12 +228,12 @@ export default {
     FooterMainTitle,
     FooterMainText,
     SocialMedia,
-    SocialButton
+    SocialButton,
   },
   methods: {
     handleSocialButtonClick(address) {
       window.open(address);
-    }
-  }
+    },
+  },
 };
 </script>

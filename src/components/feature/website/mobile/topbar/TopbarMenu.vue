@@ -20,7 +20,7 @@ const StyledButton = styled.button`
     color: rgba(0, 0, 0, 0.75);
   }
 
-  @media (min-width: ${props => props.theme.screenWidthMd}) {
+  @media (min-width: ${(props) => props.theme.screenWidthMd}) {
     width: 200px;
   }
 `;
@@ -30,7 +30,7 @@ const StyledIcon = styled.i``;
 export default {
   components: {
     StyledButton,
-    StyledIcon
-  }
+    StyledIcon,
+  },
 };
 </script>

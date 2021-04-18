@@ -3,9 +3,7 @@
     <MenuButton>
       <GithubLink />
     </MenuButton>
-    <AppTitle>
-      Micro Interactions
-    </AppTitle>
+    <AppTitle> Micro Interactions </AppTitle>
     <Instagram href="https://instagram.com/frontendjoe" target="_blank">
       <i class="icofont-instagram"></i>
     </Instagram>
@@ -65,7 +63,7 @@ export default {
     MenuButton,
     GithubLink,
     AppTitle,
-    Instagram
-  }
+    Instagram,
+  },
 };
 </script>

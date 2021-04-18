@@ -19,7 +19,7 @@
           />
         </FrameHeader>
         <FrameComponent>
-          <div @click="event => event.stopPropagation()">
+          <div @click="(event) => event.stopPropagation()">
             <component v-bind="c.componentProps" :is="c.component"></component>
           </div>
         </FrameComponent>
@@ -124,7 +124,7 @@ const detailAnimationOut = keyframes`
 const detailProps = {
   open: Boolean,
   activeItemName: String,
-  activeItemColor: String
+  activeItemColor: String,
 };
 
 const DetailFrame = styled("div", detailProps)`
@@ -136,12 +136,12 @@ const DetailFrame = styled("div", detailProps)`
   width: 100%;
   height: 100%;
   transform: translateX(
-    ${props => (props.open && props.activeItemName ? "0" : "100%")}
+    ${(props) => (props.open && props.activeItemName ? "0" : "100%")}
   );
 
-  ${props => (props.open ? `animation: ${detailAnimationIn} 1s` : "")};
+  ${(props) => (props.open ? `animation: ${detailAnimationIn} 1s` : "")};
 
-  ${props =>
+  ${(props) =>
     !props.open && props.activeItemName
       ? `animation: ${detailAnimationOut} 0.5s`
       : ""};
@@ -160,19 +160,19 @@ const Frame = styled("div", frameProps)`
   flex: 0 0 50%;
   max-height: 500px;
   min-height: 500px;
-  background: ${props => props.background};
+  background: ${(props) => props.background};
 
   &:hover .frame-header,
   &:hover .viewcode-text {
     opacity: 1;
   }
 
-  @media (min-width: ${props => props.theme.screenWidthXl}) {
+  @media (min-width: ${(props) => props.theme.screenWidthXl}) {
     max-height: 700px;
     min-height: 700px;
   }
 
-  @media (min-width: ${props => props.theme.screenWidthXxl}) {
+  @media (min-width: ${(props) => props.theme.screenWidthXxl}) {
     max-height: 900px;
     min-height: 900px;
   }
@@ -243,12 +243,13 @@ const ViewCodeSvg = styled("svg", viewCodeProps)`
   z-index: 30;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(${props => (props.isActive ? 200 : 0)});
-  transition: transform ${props => (props.isActive ? "2s" : "1s")};
+  transform: translate(-50%, -50%)
+    scale(${(props) => (props.isActive ? 200 : 0)});
+  transition: transform ${(props) => (props.isActive ? "2s" : "1s")};
 `;
 
 const ViewCodeCircle = styled("circle", viewCodeProps)`
-  fill: ${props => props.background || "black"};
+  fill: ${(props) => props.background || "black"};
 `;
 
 const BackButton = styled("div", viewCodeProps)`
@@ -256,7 +257,7 @@ const BackButton = styled("div", viewCodeProps)`
   z-index: 20;
   top: 3rem;
   left: 3rem;
-  transform: translateX(${props => (props.isActive ? "0" : "-110px")});
+  transform: translateX(${(props) => (props.isActive ? "0" : "-110px")});
   transition: transform 0.3s linear;
 
   & > a {
@@ -268,15 +269,15 @@ const BackButton = styled("div", viewCodeProps)`
     font-size: 2.5rem;
     border-radius: 50%;
     background: white;
-    color: ${props => props.background};
-    transform: scale(${props => (props.isActive ? "1" : "0.65")});
+    color: ${(props) => props.background};
+    transform: scale(${(props) => (props.isActive ? "1" : "0.65")});
     transition: transform 0.3s linear;
   }
 `;
 
 export default {
   props: {
-    components: Array
+    components: Array,
   },
   components: {
     Wrapper,
@@ -295,7 +296,7 @@ export default {
     ViewCodeSvg,
     ViewCodeCircle,
     ViewCodeText,
-    BackButton
+    BackButton,
   },
   data() {
     return {
@@ -306,7 +307,7 @@ export default {
       activeItemCollab: "",
       activeItemCollabImage: "",
       activeItemCollabInsta: "",
-      activeItemNumber: 0
+      activeItemNumber: 0,
     };
   },
   computed: {
@@ -315,7 +316,7 @@ export default {
     },
     interactionTitle() {
       return this.activeItemName && this.activeItemName.replace(/-/g, " ");
-    }
+    },
   },
   watch: {
     $route(to) {
@@ -328,7 +329,7 @@ export default {
       if (this.$route.params.name) {
         this.loadInteraction();
       }
-    }
+    },
   },
   methods: {
     isActive(name) {
@@ -341,7 +342,7 @@ export default {
       this.activeItemName = this.$route.params.name;
 
       const activeItem = this.components.find(
-        obj => obj.name === this.$route.params.name
+        (obj) => obj.name === this.$route.params.name
       );
 
       this.activeComponent = activeItem.component;
@@ -355,26 +356,26 @@ export default {
           `https://raw.githubusercontent.com/vuezy/mi/master/src/components/interactions/${activeItem.githubUrl}`,
           { crossdomain: true }
         )
-        .then(response => {
+        .then((response) => {
           // handle success
           this.activeItemCode = response.data;
           // console.log(response);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           // handle error
           console.log(error);
         })
-        .then(function() {
+        .then(function () {
           // always executed
         });
 
       //
-    }
+    },
   },
   mounted() {
     if (this.$route.params.name) {
       this.loadInteraction();
     }
-  }
+  },
 };
 </script>

@@ -14,10 +14,10 @@ const StyledWrapper = styled.img`
 
 export default {
   props: {
-    image: String
+    image: String,
   },
   components: {
-    StyledWrapper
-  }
+    StyledWrapper,
+  },
 };
 </script>

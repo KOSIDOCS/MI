@@ -19,9 +19,7 @@
         #9600FF
         <span class="material-icons-outlined">arrow_right</span>
       </HexLeft>
-      <HexRight :isHovered="isHovered">
-        #5E00FF
-      </HexRight>
+      <HexRight :isHovered="isHovered"> #5E00FF </HexRight>
       <CopyIcon :isHovered="isHovered" class="material-icons-outlined"
         >content_copy</CopyIcon
       >
@@ -61,12 +59,12 @@ const StyledWrapper = styled("button", props)`
     cursor: not-allowed;
   }
 
-  ${props =>
+  ${(props) =>
     props.isHovered || props.isClicked
       ? "& .gradient { transform: scale(10) }"
       : "& .gradient { transform: scale(1) }"};
 
-  ${props =>
+  ${(props) =>
     props.isHovered && !props.isClicked
       ? "& .hover-content { opacity: 1 }"
       : "& .hover-content { opacity: 0 }"}
@@ -89,7 +87,7 @@ const GradientBlock = styled("div", props)`
     width: 100%;
     height: 100%;
     background: red;
-    opacity: ${props => (props.isHovered || props.isClicked ? 1 : 0)};
+    opacity: ${(props) => (props.isHovered || props.isClicked ? 1 : 0)};
     background: linear-gradient(45deg, #9500ff 50%, #5e00ff 100%);
     transition: opacity ${transitionDuration};
   }
@@ -157,14 +155,14 @@ const HoverContent = styled("div", props)`
   color: white;
   padding: 0 1rem;
   letter-spacing: -1px;
-  transform: translateX(${props => (props.isClicked ? "-100%" : "0")});
+  transform: translateX(${(props) => (props.isClicked ? "-100%" : "0")});
   transition: transform ${transitionDuration}, opacity ${transitionDuration};
 `;
 
 const HexLeft = styled("div", props)`
   display: flex;
   align-items: center;
-  ${props =>
+  ${(props) =>
     props.isHovered ? `animation: linear ${popup1} ${popupDuration}` : ""};
 
   & > span {
@@ -173,13 +171,13 @@ const HexLeft = styled("div", props)`
 `;
 
 const HexRight = styled("div", props)`
-  ${props =>
+  ${(props) =>
     props.isHovered ? `animation: linear ${popup2} ${popupDuration}` : ""};
 `;
 
 const CopyIcon = styled("span", props)`
   margin-left: 1rem;
-  ${props =>
+  ${(props) =>
     props.isHovered ? `animation: linear ${popup3} ${popupDuration}` : ""};
 `;
 
@@ -193,11 +191,11 @@ const ClickedContent = styled("div", props)`
   left: 0;
   width: 100%;
   height: 100%;
-  transform: translateX(${props => (props.isClicked ? 0 : "100%")});
+  transform: translateX(${(props) => (props.isClicked ? 0 : "100%")});
   font-size: 1.075rem;
   letter-spacing: -0.325px;
   color: white;
-  opacity: ${props => (props.isClicked ? 1 : 0)};
+  opacity: ${(props) => (props.isClicked ? 1 : 0)};
   transition: transform ${transitionDuration}, opacity ${transitionDuration};
 
   & > span {
@@ -214,7 +212,7 @@ export default {
     HexLeft,
     HexRight,
     CopyIcon,
-    ClickedContent
+    ClickedContent,
   },
   methods: {
     onMouseOver() {
@@ -229,13 +227,13 @@ export default {
       setTimeout(() => {
         this.isClicked = false;
       }, 2000);
-    }
+    },
   },
   data() {
     return {
       isHovered: false,
-      isClicked: false
+      isClicked: false,
     };
-  }
+  },
 };
 </script>

@@ -55,8 +55,8 @@ const StyledOverlay = styled("div", props)`
   z-index: 1;
   width: 100%;
   height: 100%;
-  opacity: ${props => (props.open ? 1 : 0)};
-  visibility: ${props => (props.open ? "visible" : "hidden")};
+  opacity: ${(props) => (props.open ? 1 : 0)};
+  visibility: ${(props) => (props.open ? "visible" : "hidden")};
   background: rgba(0, 0, 0, 0.25);
   transition: opacity 0.25s, visibility 0.25s;
 `;
@@ -70,7 +70,7 @@ const StyledSidebar = styled("div", props)`
   height: 100%;
   padding: 4rem 1.25rem;
   background: black;
-  transform: translateX(${props => (props.open ? 0 : "-170px")});
+  transform: translateX(${(props) => (props.open ? 0 : "-170px")});
   transition: transform 0.25s;
 `;
 
@@ -84,7 +84,7 @@ const StyledRectangleLabel = styled.div`
 const itemProps = { itemWidth: String };
 const StyledRectangleItem = styled("div", itemProps)`
   height: 12px;
-  width: ${props => props.itemWidth};
+  width: ${(props) => props.itemWidth};
   background: rgba(255, 255, 255, 0.75);
   margin-bottom: 0.75rem;
 `;
@@ -97,17 +97,17 @@ export default {
     StyledCrossButton,
     StyledSidebar,
     StyledRectangleLabel,
-    StyledRectangleItem
+    StyledRectangleItem,
   },
   methods: {
     handleCrossButtonClicked() {
       this.open = !this.open;
-    }
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      open: false
+      open: false,
     };
-  }
+  },
 };
 </script>

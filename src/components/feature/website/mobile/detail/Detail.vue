@@ -23,13 +23,13 @@ import {
   InteractionTitle,
   InteractionNumber,
   InteractionCode,
-  InteractionArtists
+  InteractionArtists,
 } from "@/components/feature/website/shared";
 
 const transitionDuration = "0.65s";
 
 const styleProps = {
-  isOpen: Boolean
+  isOpen: Boolean,
 };
 
 const Overlay = styled("div", styleProps)`
@@ -41,8 +41,8 @@ const Overlay = styled("div", styleProps)`
   height: 100%;
   background: ${rgba("black", 0.05)};
 
-  visibility: ${props => (props.isOpen ? "visible" : "hidden")};
-  opacity: ${props => (props.isOpen ? 1 : 0)};
+  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
 
   transition-property: visibility, opacity;
   transition-duration: ${transitionDuration};
@@ -59,14 +59,14 @@ const Dialog = styled("div", styleProps)`
   flex-direction: column;
   padding: 2rem 1.5rem;
   background: white;
-  transform: translateX(${props => (props.isOpen ? 0 : "100%")});
+  transform: translateX(${(props) => (props.isOpen ? 0 : "100%")});
   transition: transform ${transitionDuration};
 `;
 
 export default {
   props: {
     interaction: Object,
-    isOpen: Boolean
+    isOpen: Boolean,
   },
   components: {
     Overlay,
@@ -74,7 +74,7 @@ export default {
     InteractionTitle,
     InteractionNumber,
     InteractionCode,
-    InteractionArtists
-  }
+    InteractionArtists,
+  },
 };
 </script>

@@ -13,15 +13,15 @@ const Wrapper = styled.div`
 
 export default {
   props: {
-    detailName: String
+    detailName: String,
   },
   components: {
-    Wrapper
+    Wrapper,
   },
   computed: {
     interactionTitle() {
       return this.detailName && this.detailName.replace(/-/g, " ");
-    }
-  }
+    },
+  },
 };
 </script>

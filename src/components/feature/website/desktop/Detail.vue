@@ -22,9 +22,7 @@
           />
         </HeaderRow>
       </HeaderWrapper>
-      <CodeTitle v-if="false">
-        Vuejs Code
-      </CodeTitle>
+      <CodeTitle v-if="false"> Vuejs Code </CodeTitle>
       <CodeAnimation :open="open">
         <CodeWrapper id="code-box">
           <VueCodeHighlight class="language-javascript">
@@ -51,7 +49,7 @@ const Wrapper = styled.div`
 const detailProps = {
   open: Boolean,
   activeItemName: String,
-  activeItemColor: String
+  activeItemColor: String,
 };
 
 const DetailBackground = styled("div", detailProps)`
@@ -88,7 +86,7 @@ const componentAnimation = keyframes`
 `;
 
 const ComponentWrapper = styled("div", detailProps)`
-  ${props => (props.open ? `animation: ${componentAnimation} 2.5s` : "")};
+  ${(props) => (props.open ? `animation: ${componentAnimation} 2.5s` : "")};
 `;
 
 const headerAnimation = keyframes`
@@ -107,7 +105,7 @@ const headerAnimation = keyframes`
 `;
 
 const HeaderWrapper = styled("div", detailProps)`
-  ${props => (props.open ? `animation: ${headerAnimation} 2s` : "")};
+  ${(props) => (props.open ? `animation: ${headerAnimation} 2s` : "")};
 `;
 
 const HeaderRow = styled("div", detailProps)`
@@ -168,7 +166,7 @@ const CodeAnimation = styled("div", detailProps)`
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  ${props => (props.open ? `animation: ${codeAnimation} 2s` : "")};
+  ${(props) => (props.open ? `animation: ${codeAnimation} 2s` : "")};
   background: #f7f7f7;
 `;
 
@@ -185,7 +183,7 @@ export default {
     interactionTitle: String,
     activeItemNumber: Number,
     collabImage: String,
-    collabInsta: String
+    collabInsta: String,
   },
   components: {
     Wrapper,
@@ -200,7 +198,7 @@ export default {
     CodeAnimation,
     CodeWrapper,
     CodeTitle,
-    DetailCollabs
+    DetailCollabs,
   },
   watch: {
     $route() {
@@ -211,7 +209,7 @@ export default {
           codeBox.scrollTop = 0;
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>

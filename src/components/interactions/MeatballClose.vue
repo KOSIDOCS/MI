@@ -17,7 +17,7 @@ const duration = "5s";
 const styleProps = { isClicked: Boolean };
 
 const Wrapper = styled("button", styleProps)`
-  background: ${props => (props.isClicked ? "grey" : "white")};
+  background: ${(props) => (props.isClicked ? "grey" : "white")};
   border: 0;
   height: 56px;
   width: 56px;
@@ -91,23 +91,23 @@ const bar1AnimationOut = keyframes`
 `;
 
 const Bar1 = styled(Rectangle, styleProps)`
-  ${props =>
+  ${(props) =>
     props.isClicked === true
       ? `animation: ${bar1AnimationIn} ${duration};`
       : ""};
 
-  ${props =>
+  ${(props) =>
     props.isClicked === false
       ? `animation: ${bar1AnimationOut} ${duration};`
       : ""};
 
-  transform: ${props =>
+  transform: ${(props) =>
     props.isClicked ? "scaleX(1) rotate(45deg)" : "scaleX(0) rotate(0)"};
 `;
 
 const Bar2 = styled(Rectangle, styleProps)`
-  transform: translateX(${props => (props.isClicked ? "3px" : "0")});
-  opacity: ${props => (props.isClicked ? 1 : 0)};
+  transform: translateX(${(props) => (props.isClicked ? "3px" : "0")});
+  opacity: ${(props) => (props.isClicked ? 1 : 0)};
 `;
 
 export default {
@@ -118,12 +118,12 @@ export default {
     Dot2,
     Dot3,
     Bar1,
-    Bar2
+    Bar2,
   },
   data() {
     return {
-      isClicked: undefined
+      isClicked: undefined,
     };
-  }
+  },
 };
 </script>

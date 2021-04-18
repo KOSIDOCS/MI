@@ -67,7 +67,7 @@ export default {
     Content,
     ContentTitle,
     ContentSubtitle,
-    HighlightButton
-  }
+    HighlightButton,
+  },
 };
 </script>

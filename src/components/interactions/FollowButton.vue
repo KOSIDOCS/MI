@@ -41,7 +41,7 @@ export default {
   components: {
     Wrapper,
     Icon,
-    ButtonText
-  }
+    ButtonText,
+  },
 };
 </script>

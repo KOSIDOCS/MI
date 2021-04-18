@@ -41,7 +41,7 @@ export default {
   components: {
     Wrapper,
     Highlight,
-    TheLink
-  }
+    TheLink,
+  },
 };
 </script>

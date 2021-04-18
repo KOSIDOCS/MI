@@ -108,7 +108,7 @@ const StyledBackgroundText = styled.div`
   left: -25px;
   font-size: 180px;
   font-weight: 600;
-  color: ${props => rgba(props.theme.colorText, 0.05)};
+  color: ${(props) => rgba(props.theme.colorText, 0.05)};
   white-space: nowrap;
   transition: 0.1s;
 `;
@@ -142,7 +142,7 @@ const StyledContentLeft = styled.div`
 `;
 
 const StyledNumber = styled.div`
-  color: ${props => rgba(props.theme.colorText, 0.5)};
+  color: ${(props) => rgba(props.theme.colorText, 0.5)};
   font-size: 50px;
   line-height: 52px;
   letter-spacing: -1px;
@@ -162,7 +162,7 @@ const StyledTitle = styled.div`
   line-height: 92px;
   letter-spacing: -1px;
   margin-bottom: 1.5rem;
-  color: ${props => rgba(props.theme.colorText, 0.96)};
+  color: ${(props) => rgba(props.theme.colorText, 0.96)};
 
   transition: 0.4s;
 `;
@@ -176,8 +176,8 @@ const StyledImage = styled("img", imageProps)`
   border-radius: 50%;
   width: 90px;
   height: 90px;
-  border: 5px solid ${props => props.theme.colorBorder};
-  transform: translateX(${props => (props.isLast ? "-39px" : "0")});
+  border: 5px solid ${(props) => props.theme.colorBorder};
+  transform: translateX(${(props) => (props.isLast ? "-39px" : "0")});
   transition: border-color 0.4s;
 `;
 
@@ -237,16 +237,16 @@ export default {
     ImageNext,
     Top,
     Middle,
-    Bottom
+    Bottom,
   },
   methods: {
     toggleDarkMode() {
       this.darkModeOn = !this.darkModeOn;
-    }
+    },
   },
   data() {
     return {
-      darkModeOn: true
+      darkModeOn: true,
     };
   },
   computed: {
@@ -255,16 +255,16 @@ export default {
         return {
           colorBackground: "#040404",
           colorText: "white",
-          colorBorder: rgba("#fff", 0.15)
+          colorBorder: rgba("#fff", 0.15),
         };
       } else {
         return {
           colorBackground: "#f7f7fd",
           colorText: "#10132F",
-          colorBorder: rgba("#10132F", 0.25)
+          colorBorder: rgba("#10132F", 0.25),
         };
       }
-    }
-  }
+    },
+  },
 };
 </script>

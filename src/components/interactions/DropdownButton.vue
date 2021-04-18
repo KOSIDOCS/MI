@@ -51,7 +51,7 @@ const StyledWrapper = styled("div", props)`
     0 9px 46px 8px rgba(0, 0, 0, 0.025), 0 11px 15px -7px rgba(0, 0, 0, 0.025);
   border-radius: 0.5rem;
   ${"" /* border: 1px solid ${colorBorder}; */}
-  max-height: ${props => (props.open ? "204px" : "56px")};
+  max-height: ${(props) => (props.open ? "204px" : "56px")};
   transition: max-height ${transitionDuration},
     border-color ${transitionDuration};
 
@@ -137,16 +137,16 @@ const rectangleDefaults = css`
 
 const StyledIconRectangle1 = styled("div", props)`
   ${rectangleDefaults};
-  transform: rotate(-45deg) scaleY(${props => (props.open ? 1.75 : 1)})
-    translate(${props => (props.open ? "2px, 1px" : 0)});
+  transform: rotate(-45deg) scaleY(${(props) => (props.open ? 1.75 : 1)})
+    translate(${(props) => (props.open ? "2px, 1px" : 0)});
   top: 8px;
   left: 8px;
 `;
 
 const StyledIconRectangle2 = styled("div", props)`
   ${rectangleDefaults};
-  transform: rotate(45deg) scaleY(${props => (props.open ? 1.75 : 1)})
-    translate(${props => (props.open ? "-2px, 1px" : 0)});
+  transform: rotate(45deg) scaleY(${(props) => (props.open ? 1.75 : 1)})
+    translate(${(props) => (props.open ? "-2px, 1px" : 0)});
   top: 8px;
   right: 8px;
 `;
@@ -163,7 +163,7 @@ export default {
     StyledText,
     StyledIconWrapper,
     StyledIconRectangle1,
-    StyledIconRectangle2
+    StyledIconRectangle2,
   },
   data() {
     return {
@@ -171,9 +171,9 @@ export default {
       menuItems: [
         { title: "Distance", icon: "location_on" },
         { title: "Best Match", icon: "grade" },
-        { title: "Rating", icon: "emoji_events" }
-      ]
+        { title: "Rating", icon: "emoji_events" },
+      ],
     };
-  }
+  },
 };
 </script>

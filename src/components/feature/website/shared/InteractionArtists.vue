@@ -44,14 +44,14 @@ const Collab = styled("a", collabProps)`
     z-index: 1;
   }
 
-  ${props => (props.float ? "z-index: 0; transform: translateX(-25px)" : "")};
+  ${(props) => (props.float ? "z-index: 0; transform: translateX(-25px)" : "")};
 `;
 
 const CollabName = styled("div", collabProps)`
   font-size: 0.575rem;
   color: rgba(0, 0, 0, 0.38);
 
-  ${props => (props.float ? "padding-left: 18px" : "")};
+  ${(props) => (props.float ? "padding-left: 18px" : "")};
 `;
 
 const CollabImage = styled("img", collabProps)`
@@ -66,13 +66,13 @@ const CollabImage = styled("img", collabProps)`
 export default {
   props: {
     collabImage: String,
-    collabInsta: String
+    collabInsta: String,
   },
   components: {
     Wrapper,
     Collab,
     CollabImage,
-    CollabName
-  }
+    CollabName,
+  },
 };
 </script>

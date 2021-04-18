@@ -61,7 +61,8 @@ const StyledTooltip = styled.div`
   background: ${tooltipBackground};
   cursor: pointer;
 
-  ${"" /* &::after {
+  ${
+    "" /* &::after {
     content: "";
     width: 10px;
     height: 10px;
@@ -70,7 +71,8 @@ const StyledTooltip = styled.div`
     bottom: -7px;
     background: inherit;
     transform: rotate(45deg) translateX(-50%);
-  } */}
+  } */
+  }
 `;
 
 const tooltipProps = { copied: Boolean };
@@ -84,7 +86,7 @@ const StyledTooltipMessage = styled("div", tooltipProps)`
   width: 100%;
   height: 100%;
   background: ${tooltipBackground};
-  transform: translateY(${props => (props.copied ? 0 : "100%")});
+  transform: translateY(${(props) => (props.copied ? 0 : "100%")});
   transition: transform ${transitionDuration};
 `;
 
@@ -113,7 +115,7 @@ export default {
     StyledTooltipCopyButton,
     StyledTooltipMessage,
     StyledTextbox,
-    StyledColorSquare
+    StyledColorSquare,
   },
   methods: {
     copyText() {
@@ -122,12 +124,12 @@ export default {
       setTimeout(() => {
         this.copied = false;
       }, 2000);
-    }
+    },
   },
   data() {
     return {
-      copied: false
+      copied: false,
     };
-  }
+  },
 };
 </script>

@@ -139,7 +139,7 @@ export default {
     ProfileImage,
     ProfileImageWrapper,
     PulsingBadge,
-    FollowButton
-  }
+    FollowButton,
+  },
 };
 </script>

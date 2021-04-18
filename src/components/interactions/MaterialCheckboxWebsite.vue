@@ -7,7 +7,7 @@ import MaterialCheckbox from "./MaterialCheckbox";
 
 export default {
   components: {
-    MaterialCheckbox
-  }
+    MaterialCheckbox,
+  },
 };
 </script>

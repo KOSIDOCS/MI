@@ -1,9 +1,7 @@
 <template>
   <StyledLogoWrapper>
     <StyledJoeImage content="@frontendjoe" v-tippy :src="joeImage" />
-    <StyledLogoText>
-      @frontendjoe
-    </StyledLogoText>
+    <StyledLogoText> @frontendjoe </StyledLogoText>
   </StyledLogoWrapper>
 </template>
 
@@ -23,7 +21,7 @@ const StyledLogoText = styled.div`
   color: rgba(0, 0, 0, 0.57);
   display: none;
 
-  @media (min-width: ${props => props.theme.screenWidthMd}) {
+  @media (min-width: ${(props) => props.theme.screenWidthMd}) {
     display: block;
   }
 `;
@@ -39,12 +37,12 @@ export default {
   components: {
     StyledLogoWrapper,
     StyledLogoText,
-    StyledJoeImage
+    StyledJoeImage,
   },
-  data: function() {
+  data: function () {
     return {
-      joeImage: require("@/assets/images/joe.png")
+      joeImage: require("@/assets/images/joe.png"),
     };
-  }
+  },
 };
 </script>

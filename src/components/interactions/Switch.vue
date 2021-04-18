@@ -54,7 +54,7 @@ const Slider = styled.span`
 export default {
   components: {
     MaterialSwitch,
-    Slider
-  }
+    Slider,
+  },
 };
 </script>

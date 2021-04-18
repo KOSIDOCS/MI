@@ -17,16 +17,16 @@ const Wrapper = styled.div`
 
 export default {
   props: {
-    interactionName: String
+    interactionName: String,
   },
   components: {
-    Wrapper
+    Wrapper,
   },
   computed: {
     interactionTitle() {
       console.log("interactionTitle", this.interactionName);
       return this.interactionName && this.interactionName.replace(/-/g, " ");
-    }
-  }
+    },
+  },
 };
 </script>

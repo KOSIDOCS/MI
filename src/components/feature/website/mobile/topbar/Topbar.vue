@@ -28,7 +28,7 @@ const StyledWrapper = styled.div`
   padding: 0;
   color: white;
 
-  @media (min-width: ${props => props.theme.screenWidthMd}) {
+  @media (min-width: ${(props) => props.theme.screenWidthMd}) {
     padding: 0 2rem;
   }
 `;
@@ -37,7 +37,7 @@ export default {
   components: {
     StyledWrapper,
     TopbarIconLink,
-    TopbarTitle
-  }
+    TopbarTitle,
+  },
 };
 </script>

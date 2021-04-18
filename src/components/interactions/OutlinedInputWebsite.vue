@@ -12,7 +12,7 @@ import OutlinedInput from "./OutlinedInput";
 
 export default {
   components: {
-    OutlinedInput
-  }
+    OutlinedInput,
+  },
 };
 </script>

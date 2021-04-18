@@ -29,8 +29,8 @@ const Wrapper = styled("div", styleProps)`
   padding: 1.5rem;
   border-radius: 10px;
   background: white;
-  opacity: ${props => (props.dismissDialog ? 0 : 1)};
-  visibility: ${props => (props.dismissDialog ? "hidden" : "visible")};
+  opacity: ${(props) => (props.dismissDialog ? 0 : 1)};
+  visibility: ${(props) => (props.dismissDialog ? "hidden" : "visible")};
   transition-property: opacity, visibility;
   transition-duration: 0.35s;
   box-shadow: rgba(0, 0, 0, 0.11) 0 0 0 1px,
@@ -80,13 +80,13 @@ export default {
     CloseButton,
     CardTitle,
     CardText,
-    CardLink
+    CardLink,
   },
   methods: {
     closeDialog() {
       this.dismissDialog = true;
       localStorage.setItem("dismissDialog", "true");
-    }
+    },
   },
   mounted() {
     var dismissDialog = localStorage.getItem("dismissDialog");
@@ -105,8 +105,8 @@ export default {
   },
   data() {
     return {
-      dismissDialog: true
+      dismissDialog: true,
     };
-  }
+  },
 };
 </script>

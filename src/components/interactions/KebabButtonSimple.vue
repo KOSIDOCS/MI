@@ -85,8 +85,8 @@
 export default {
   data() {
     return {
-      isClicked: false
+      isClicked: false,
     };
-  }
+  },
 };
 </script>

@@ -80,7 +80,7 @@ const IconCircle = styled("div", knobProps)`
   height: 20px;
   border-radius: 50%;
   background: #4c506b;
-  transform: scale(${props => (props.darkModeOn ? 1 : 0.5)});
+  transform: scale(${(props) => (props.darkModeOn ? 1 : 0.5)});
   transition: transform 0.4s;
 
   &::after {
@@ -92,9 +92,9 @@ const IconCircle = styled("div", knobProps)`
     height: 14px;
     border-radius: inherit;
     background: #f7f7f7;
-    opacity: ${props => (props.darkModeOn ? 1 : 0)};
+    opacity: ${(props) => (props.darkModeOn ? 1 : 0)};
     transform: translate(
-      ${props => (props.darkModeOn ? "0,0" : "10px, -10px")}
+      ${(props) => (props.darkModeOn ? "0,0" : "10px, -10px")}
     );
     transition: 0.4s;
   }
@@ -106,7 +106,7 @@ const LightModeBackground = styled("img", knobProps)`
   position: absolute;
   top: 0;
   left: 0;
-  transform: scale(${props => (props.darkModeOn ? 0 : 1)});
+  transform: scale(${(props) => (props.darkModeOn ? 0 : 1)});
   transition: transform 0.4s;
 `;
 
@@ -117,12 +117,12 @@ export default {
     SwitchKnob,
     IconWrapper,
     IconCircle,
-    LightModeBackground
+    LightModeBackground,
   },
   data() {
     return {
-      darkModeOn: true
+      darkModeOn: true,
     };
-  }
+  },
 };
 </script>

@@ -1,9 +1,7 @@
 <template>
   <div class="wrapper">
     <input type="text" />
-    <div class="placeholder">
-      Best Library
-    </div>
+    <div class="placeholder">Best Library</div>
   </div>
 </template>
 

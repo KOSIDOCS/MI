@@ -71,7 +71,7 @@ const styleProps = {
   isComplete: Boolean,
   ringColor: String,
   duration: Number,
-  animationIndex: Number
+  animationIndex: Number,
 };
 const buttonColor = "#9A6FD8";
 // const buttonColorDark = "#5b4682";
@@ -100,7 +100,7 @@ const Progress = styled("div", styleProps)`
 const svgProps = { zIndex: Number };
 const ProgressSvg = styled("svg", svgProps)`
   position: absolute;
-  z-index: ${props => props.zIndex};
+  z-index: ${(props) => props.zIndex};
 `;
 
 const progressAnimation = keyframes`
@@ -140,14 +140,14 @@ const progressAnimation2 = keyframes`
 `;
 
 const ProgressCircle = styled("circle", styleProps)`
-  stroke: ${props =>
+  stroke: ${(props) =>
     rgba(props.ringColor, props.animationIndex === 0 ? 0.5 : 1)};
   stroke-width: 10;
   fill: transparent;
-  stroke-dashoffset: ${props => (props.isClicked === undefined ? 138 : 0)};
+  stroke-dashoffset: ${(props) => (props.isClicked === undefined ? 138 : 0)};
   stroke-dasharray: 138 138;
 
-  ${props =>
+  ${(props) =>
     props.isClicked === true && props.isComplete === false
       ? `animation: ${
           props.animationIndex === 0 ? progressAnimation : progressAnimation2
@@ -190,20 +190,20 @@ const RoundButton = styled("button", styleProps)`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  cursor: ${props => (props.isClicked ? "pointer" : "pointer")};
-  background: ${props =>
+  cursor: ${(props) => (props.isClicked ? "pointer" : "pointer")};
+  background: ${(props) =>
     props.isComplete ? buttonColorComplete : buttonColor};
 
-  ${props => (props.isComplete ? "transition: background 0.65s;" : "")};
+  ${(props) => (props.isComplete ? "transition: background 0.65s;" : "")};
 `;
 
 const IconWrapper = styled("div", styleProps)`
   width: 20px;
   height: 20px;
-  opacity: ${props => (props.isComplete ? 0 : 1)};
+  opacity: ${(props) => (props.isComplete ? 0 : 1)};
   transition: opacity 0.25s;
 
-  ${props =>
+  ${(props) =>
     props.isClicked && !props.isComplete
       ? `animation: ${spinAnimation} 1s infinite linear`
       : props.isComplete
@@ -256,7 +256,7 @@ export default {
     RoundButton,
     IconWrapper,
     Icon,
-    CompleteIcon
+    CompleteIcon,
   },
   methods: {
     onClick() {
@@ -268,13 +268,13 @@ export default {
           this.isComplete = false;
         }, 2500);
       }, duration);
-    }
+    },
   },
   data() {
     return {
       isClicked: undefined,
-      isComplete: false
+      isComplete: false,
     };
-  }
+  },
 };
 </script>

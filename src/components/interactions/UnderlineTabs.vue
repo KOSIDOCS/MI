@@ -1,7 +1,7 @@
 <template>
   <StyledOuterWrapper>
     <StyledWrapper>
-      <StyledButtonUnderline :index="items.findIndex(obj => obj.active)" />
+      <StyledButtonUnderline :index="items.findIndex((obj) => obj.active)" />
       <StyledButton
         v-for="(item, index) in items"
         :key="item.text"
@@ -49,7 +49,7 @@ const buttonProps = {
   active: Boolean,
   index: Number,
   translateX: String,
-  paddingRight: String
+  paddingRight: String,
 };
 
 const StyledButton = styled("button", buttonProps)`
@@ -61,12 +61,14 @@ const StyledButton = styled("button", buttonProps)`
   justify-content: center;
   width: ${buttonWidth};
   height: 74px;
-  color: ${props => rgba("#10132F", props.active ? 0.96 : 0.38)};
+  color: ${(props) => rgba("#10132F", props.active ? 0.96 : 0.38)};
   transition: color 0.25s;
 
-  ${"" /* &:hover {
+  ${
+    "" /* &:hover {
     ${props => (!props.active ? `color: ${rgba("#10132F", 0.57)}` : "")};
-  } */}
+  } */
+  }
 `;
 
 const StyledButtonUnderline = styled("span", buttonProps)`
@@ -75,7 +77,7 @@ const StyledButtonUnderline = styled("span", buttonProps)`
   left: 0;
   height: 5px;
   width: ${buttonWidth};
-  transform: translate(${props => props.index * 100}%, -50%);
+  transform: translate(${(props) => props.index * 100}%, -50%);
   background: ${rgba("#19C8C2", 0.99)};
   transition: transform ${animationDuration};
 `;
@@ -96,7 +98,7 @@ const StyledButtonText = styled("span", buttonProps)`
 
 export default {
   props: {
-    animationDuration: String
+    animationDuration: String,
   },
   components: {
     StyledOuterWrapper,
@@ -104,7 +106,7 @@ export default {
     StyledButton,
     StyledButtonUnderline,
     StyledButtonIcon,
-    StyledButtonText
+    StyledButtonText,
   },
   methods: {
     toggleNav(index) {
@@ -115,7 +117,7 @@ export default {
           item.active = false;
         }
       });
-    }
+    },
   },
   data() {
     return {
@@ -125,14 +127,14 @@ export default {
           icon: "location_on",
           active: false,
           translateX: "-18px",
-          paddingRight: "12px"
+          paddingRight: "12px",
         },
         {
           text: "Flights",
           icon: "flight",
           active: true,
           translateX: "-18px",
-          paddingRight: "10px"
+          paddingRight: "10px",
         },
 
         {
@@ -140,10 +142,10 @@ export default {
           icon: "card_travel",
           active: false,
           translateX: "-15px",
-          paddingRight: "15px"
-        }
-      ]
+          paddingRight: "15px",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

@@ -109,16 +109,16 @@ export default {
     ImagePrev,
     Top,
     Middle,
-    Bottom
+    Bottom,
   },
   methods: {
     toggleDarkMode() {
       this.darkModeOn = !this.darkModeOn;
-    }
+    },
   },
   data() {
     return {
-      darkModeOn: true
+      darkModeOn: true,
     };
   },
   computed: {
@@ -127,16 +127,16 @@ export default {
         return {
           colorBackground: "#040404",
           colorText: "white",
-          colorBorder: rgba("#fff", 0.15)
+          colorBorder: rgba("#fff", 0.15),
         };
       } else {
         return {
           colorBackground: "#f7f7fd",
           colorText: "#10132F",
-          colorBorder: rgba("#10132F", 0.25)
+          colorBorder: rgba("#10132F", 0.25),
         };
       }
-    }
-  }
+    },
+  },
 };
 </script>

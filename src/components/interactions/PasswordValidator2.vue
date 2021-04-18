@@ -30,17 +30,17 @@ const Wrapper = styled("div", styleProps)`
   background: #fff;
   border-radius: 0.5rem;
   border: 3px solid
-    ${props => (props.isValid === false ? "#F56476" : "#8D86C9")};
+    ${(props) => (props.isValid === false ? "#F56476" : "#8D86C9")};
   height: 60px;
   display: flex;
   transition-property: border-color, background;
   transition-duration: 0.35s;
 
   & .material-icons-outlined {
-    ${props => (props.isValid === false ? "background: #FF6B6C;" : "")};
+    ${(props) => (props.isValid === false ? "background: #FF6B6C;" : "")};
   }
 
-  ${props =>
+  ${(props) =>
     props.isValid === false ? `animation: ${shakeAnimation} 0.175s 0s 3` : ""};
 `;
 
@@ -65,7 +65,7 @@ const SubmitButton = styled("button", styleProps)`
   width: 56px;
 
   &:hover > span {
-    ${props =>
+    ${(props) =>
       props.isValid === undefined
         ? `background: ${darken(0.1, "#8994d0")}`
         : ""};
@@ -86,7 +86,7 @@ export default {
   components: {
     Wrapper,
     Textbox,
-    SubmitButton
+    SubmitButton,
   },
   methods: {
     onSubmit() {
@@ -103,14 +103,14 @@ export default {
         this.isValid = undefined;
         this.isSubmitted = undefined;
       }, 2000);
-    }
+    },
   },
   data() {
     return {
       textboxValue: "",
       isValid: undefined,
-      isSubmitted: undefined
+      isSubmitted: undefined,
     };
-  }
+  },
 };
 </script>

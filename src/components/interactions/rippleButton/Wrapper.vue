@@ -97,7 +97,7 @@ const StyledButtonText = styled.span`
 export default {
   components: {
     StyledButton,
-    StyledButtonText
+    StyledButtonText,
   },
   methods: {
     onClick(event) {
@@ -135,7 +135,7 @@ export default {
       rippleButton.appendChild(rippleDomElement);
 
       // remove element
-    }
-  }
+    },
+  },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <StyledOuterWrapper>
     <StyledWrapper>
-      <StyledButtonHighlight :index="items.findIndex(obj => obj.active)" />
+      <StyledButtonHighlight :index="items.findIndex((obj) => obj.active)" />
       <StyledButton
         v-for="(item, index) in items"
         :key="item.text"
@@ -53,7 +53,7 @@ const buttonProps = {
   active: Boolean,
   index: Number,
   translateX: String,
-  paddingRight: String
+  paddingRight: String,
 };
 
 const StyledButton = styled("button", buttonProps)`
@@ -76,22 +76,22 @@ const StyledButtonHighlight = styled("span", buttonProps)`
   height: 30px;
   width: ${buttonWidth};
   border-radius: 6px;
-  transform: translate(${props => props.index * 100}%, -50%);
+  transform: translate(${(props) => props.index * 100}%, -50%);
   background: rgba(255, 255, 255, 0.175);
   transition: transform ${animationDuration};
 `;
 
 const StyledButtonIcon = styled("span", buttonProps)`
   font-size: 18px;
-  transform: translateX(${props => (props.active ? props.translateX : 0)});
+  transform: translateX(${(props) => (props.active ? props.translateX : 0)});
   transition: transform ${animationDuration};
 `;
 
 const StyledButtonText = styled("span", buttonProps)`
-  opacity: ${props => (props.active ? 1 : 0)};
+  opacity: ${(props) => (props.active ? 1 : 0)};
   position: absolute;
   right: 0;
-  padding-right: ${props => props.paddingRight};
+  padding-right: ${(props) => props.paddingRight};
   font-weight: 600;
   transform: translateY(-1px);
   transition: opacity ${animationDuration};
@@ -99,7 +99,7 @@ const StyledButtonText = styled("span", buttonProps)`
 
 export default {
   props: {
-    animationDuration: String
+    animationDuration: String,
   },
   components: {
     StyledOuterWrapper,
@@ -107,7 +107,7 @@ export default {
     StyledButton,
     StyledButtonHighlight,
     StyledButtonIcon,
-    StyledButtonText
+    StyledButtonText,
   },
   methods: {
     toggleNav(index) {
@@ -118,7 +118,7 @@ export default {
           item.active = false;
         }
       });
-    }
+    },
   },
   data() {
     return {
@@ -128,14 +128,14 @@ export default {
           icon: "equalizer",
           active: false,
           translateX: "-18px",
-          paddingRight: "12px"
+          paddingRight: "12px",
         },
         {
           text: "Inbox",
           icon: "mail",
           active: true,
           translateX: "-18px",
-          paddingRight: "10px"
+          paddingRight: "10px",
         },
 
         {
@@ -143,10 +143,10 @@ export default {
           icon: "search",
           active: false,
           translateX: "-15px",
-          paddingRight: "15px"
-        }
-      ]
+          paddingRight: "15px",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

@@ -42,10 +42,10 @@ const StyledDot = styled("span", dotProps)`
   height: 18px;
   border-radius: 50%;
   margin: 0;
-  background: ${props =>
+  background: ${(props) =>
     props.active ? props.theme.colorPrimary : "rgba(255, 255, 255, 0.15)"};
 
-  ${props =>
+  ${(props) =>
     props.active ? "transform: scale(1, 1);" : "transform: scale(0.725,0.725)"};
 
   transition: transform 0.25s;
@@ -58,13 +58,13 @@ const StyledDot = styled("span", dotProps)`
 export default {
   props: {
     dots: Array,
-    activeIndex: Number
+    activeIndex: Number,
   },
   components: {
     StyledWrapper,
     StyledDotButton,
     StyledDot,
-    StyledDotWrapper
-  }
+    StyledDotWrapper,
+  },
 };
 </script>

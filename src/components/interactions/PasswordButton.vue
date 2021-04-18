@@ -51,7 +51,7 @@ const Textfield = styled("input", eyeProps)`
   outline: none;
   border: 0;
   background: transparent;
-  color: ${props => (props.showPassword ? colorTextShow : colorTextHide)};
+  color: ${(props) => (props.showPassword ? colorTextShow : colorTextHide)};
   width: 100%;
   height: 100%;
   padding: 0 1rem;
@@ -76,7 +76,7 @@ const EyeButton = styled("button", eyeProps)`
     height: 100%;
     border-radius: 50%;
     background: ${colorHide};
-    transform: scale(${props => (props.showPassword ? "20" : "1")});
+    transform: scale(${(props) => (props.showPassword ? "20" : "1")});
     transition: transform ${transitionDuration};
   }
 
@@ -106,7 +106,7 @@ const EyeLine = styled("div", eyeProps)`
   width: 24px;
   height: 2px;
   transform: rotate(45deg)
-    translateX(${props => (props.showPassword ? "1px" : "-26px")})
+    translateX(${(props) => (props.showPassword ? "1px" : "-26px")})
     translateY(-3px);
   transform-origin: 50% 50%;
   background: ${colorIcon};
@@ -129,12 +129,12 @@ export default {
     Textfield,
     EyeButton,
     EyeLine,
-    EyeLineWrapper
+    EyeLineWrapper,
   },
   data() {
     return {
-      showPassword: false
+      showPassword: false,
     };
-  }
+  },
 };
 </script>

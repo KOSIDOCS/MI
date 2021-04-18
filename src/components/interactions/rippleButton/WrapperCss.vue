@@ -50,8 +50,10 @@ const StyledButton = styled.button`
     height: 80px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.2);
-    ${"" /* box-shadow: inset -5px -5px 10px ${lighten(0.075, backgroundColor)},
-      inset 5px 5px 10px ${darken(0.1, backgroundColor)}; */}
+    ${
+      "" /* box-shadow: inset -5px -5px 10px ${lighten(0.075, backgroundColor)},
+      inset 5px 5px 10px ${darken(0.1, backgroundColor)}; */
+    }
     opacity: 0;
     pointer-events: none;
     transform-origin: 0% 0%;
@@ -94,12 +96,12 @@ export default {
   props: {
     buttonId: {
       type: String,
-      default: "ripple-button"
-    }
+      default: "ripple-button",
+    },
   },
   components: {
     StyledButton,
-    StyledButtonText
+    StyledButtonText,
   },
   methods: {
     getScrollParent(node) {
@@ -140,7 +142,7 @@ export default {
       rippleDomElement.addEventListener("animationend", removeFunction);
 
       rippleButton.appendChild(rippleDomElement);
-    }
-  }
+    },
+  },
 };
 </script>

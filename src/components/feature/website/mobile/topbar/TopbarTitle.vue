@@ -1,7 +1,5 @@
 <template>
-  <StyledTitle>
-    MI
-  </StyledTitle>
+  <StyledTitle> MI </StyledTitle>
 </template>
 
 <script>
@@ -20,7 +18,7 @@ const StyledTitle = styled.div`
 
 export default {
   components: {
-    StyledTitle
-  }
+    StyledTitle,
+  },
 };
 </script>

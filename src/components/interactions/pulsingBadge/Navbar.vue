@@ -1,20 +1,14 @@
 <template>
   <Wrapper>
     <IconWrapper>
-      <Icon class="material-icons-outlined">
-        article
-      </Icon>
+      <Icon class="material-icons-outlined"> article </Icon>
     </IconWrapper>
     <IconWrapper>
       <PulsingBadge><Pulser /></PulsingBadge>
-      <Icon class="material-icons-outlined">
-        favorite_border
-      </Icon>
+      <Icon class="material-icons-outlined"> favorite_border </Icon>
     </IconWrapper>
     <IconWrapper>
-      <Icon class="material-icons-outlined">
-        mail
-      </Icon>
+      <Icon class="material-icons-outlined"> mail </Icon>
     </IconWrapper>
   </Wrapper>
 </template>
@@ -94,7 +88,7 @@ export default {
     IconWrapper,
     Icon,
     PulsingBadge,
-    Pulser
-  }
+    Pulser,
+  },
 };
 </script>

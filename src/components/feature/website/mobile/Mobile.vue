@@ -48,10 +48,12 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-self: stretch;
 
-  ${"" /* @media (min-width: ${props => props.theme.screenWidthMd}) {
+  ${
+    "" /* @media (min-width: ${props => props.theme.screenWidthMd}) {
     padding: 0 2rem;
     display: none;
-  } */}
+  } */
+  }
 `;
 
 const styleProps = { background: String };
@@ -66,12 +68,12 @@ const StyledSlide = styled("div", styleProps)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${props => props.background || "transparent"};
+  background: ${(props) => props.background || "transparent"};
 `;
 
 export default {
   props: {
-    slides: Array
+    slides: Array,
   },
   components: {
     StyledWrapper,
@@ -81,17 +83,17 @@ export default {
     Bottombar,
     Carousel,
     Slide,
-    StyledSlide
+    StyledSlide,
   },
   computed: {
     dots() {
       return this.slides.map((obj, index) => index);
-    }
+    },
   },
-  data: function() {
+  data: function () {
     return {
       detailOpen: false,
-      navigateTo: 0
+      navigateTo: 0,
     };
   },
   methods: {
@@ -104,8 +106,8 @@ export default {
     },
     handlePageChanged(page) {
       this.navigateTo = page;
-    }
-  }
+    },
+  },
 };
 </script>
 

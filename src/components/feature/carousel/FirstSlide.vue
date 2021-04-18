@@ -163,7 +163,7 @@ const StyledImage = styled("img", imageProps)`
   width: 90px;
   height: 90px;
   border: 5px solid rgba(255, 255, 255, 0.15);
-  transform: translateX(${props => (props.isLast ? "-39px" : "0")});
+  transform: translateX(${(props) => (props.isLast ? "-39px" : "0")});
 `;
 
 const StyledBranding1 = styled.img`
@@ -219,7 +219,7 @@ export default {
     ImageNext,
     Top,
     Middle,
-    Bottom
-  }
+    Bottom,
+  },
 };
 </script>

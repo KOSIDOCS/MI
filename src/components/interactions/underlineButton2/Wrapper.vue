@@ -88,7 +88,7 @@ export default {
     StyledButtonWrapper,
     Button1,
     Button2,
-    Button3
-  }
+    Button3,
+  },
 };
 </script>

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 
 export default {
   components: {
-    Wrapper
-  }
+    Wrapper,
+  },
 };
 </script>

@@ -20,15 +20,15 @@ const CodeWrapper = styled(VuePerfectScrollbar)`
 
 export default {
   props: {
-    githubPath: String
+    githubPath: String,
   },
   components: {
     VueCodeHighlight,
-    CodeWrapper
+    CodeWrapper,
   },
   data() {
     return {
-      code: ""
+      code: "",
     };
   },
   watch: {
@@ -37,7 +37,7 @@ export default {
         this.loadCode();
       }
       console.log("interaction changed!", next, prev);
-    }
+    },
   },
   methods: {
     loadCode() {
@@ -46,24 +46,24 @@ export default {
           `https://raw.githubusercontent.com/vuezy/mi/master/src/components/interactions/${this.githubPath}`,
           { crossdomain: true }
         )
-        .then(response => {
+        .then((response) => {
           // handle success
           this.code = response.data;
           // console.log(response);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           // handle error
           console.log(error);
         })
-        .then(function() {
+        .then(function () {
           // always executed
         });
 
       //
-    }
+    },
   },
   mounted() {
     this.loadCode();
-  }
+  },
 };
 </script>

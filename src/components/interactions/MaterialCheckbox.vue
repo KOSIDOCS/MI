@@ -22,25 +22,25 @@ const StyledWrapper = styled("button", props)`
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: ${props => (props.isDark ? "#6546D8" : "white")};
+  color: ${(props) => (props.isDark ? "#6546D8" : "white")};
   font-weight: 500;
   height: 60px;
 `;
 
 const Checkbox = styled("div", props)`
   position: absolute;
-  width: ${props => (props.isChecked ? "25px" : "60px")};
+  width: ${(props) => (props.isChecked ? "25px" : "60px")};
   height: 60px;
   border-width: 5px;
   border-style: solid;
-  border-top-color: ${props =>
+  border-top-color: ${(props) =>
     props.isChecked ? "transparent" : props.borderColor};
-  border-bottom-color: ${props => props.borderColor};
-  border-left-color: ${props =>
+  border-bottom-color: ${(props) => props.borderColor};
+  border-left-color: ${(props) =>
     props.isChecked ? "transparent" : props.borderColor};
-  border-right-color: ${props => props.borderColor};
-  transform: rotate(${props => (props.isChecked ? "45deg" : "0")})
-    translate(${props => (props.isChecked ? "10px, -22px" : "0")});
+  border-right-color: ${(props) => props.borderColor};
+  transform: rotate(${(props) => (props.isChecked ? "45deg" : "0")})
+    translate(${(props) => (props.isChecked ? "10px, -22px" : "0")});
   transition: transform ${transitionDuration},
     border-color ${transitionDuration}, width ${transitionDuration};
 `;
@@ -54,18 +54,18 @@ const CheckboxLabel = styled.div`
 export default {
   props: {
     isDark: Boolean,
-    hideLabel: Boolean
+    hideLabel: Boolean,
   },
   components: {
     StyledWrapper,
     Checkbox,
-    CheckboxLabel
+    CheckboxLabel,
   },
   data() {
     return {
       isChecked: false,
-      borderColor: this.isDark ? "#6546D8" : "white"
+      borderColor: this.isDark ? "#6546D8" : "white",
     };
-  }
+  },
 };
 </script>

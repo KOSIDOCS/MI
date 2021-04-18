@@ -13,7 +13,7 @@ const props = { colorText: String, colorHighlight: String };
 
 const HighlightButton = styled("a", props)`
   position: relative;
-  color: ${props => props.colorText};
+  color: ${(props) => props.colorText};
   cursor: pointer;
 
   &:hover::after {
@@ -28,7 +28,7 @@ const HighlightButton = styled("a", props)`
     bottom: 3px;
     height: 3px;
     width: 100%;
-    background: ${props => props.colorHighlight};
+    background: ${(props) => props.colorHighlight};
     transform-origin: 0% 100%;
     transition: transform 0.35s;
   }
@@ -43,11 +43,11 @@ export default {
   props: {
     colorText: String,
     colorHighlight: String,
-    text: String
+    text: String,
   },
   components: {
     HighlightButton,
-    ButtonText
-  }
+    ButtonText,
+  },
 };
 </script>

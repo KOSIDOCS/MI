@@ -39,7 +39,7 @@ const Dot = styled("span", styleProps)`
   top: 0;
   left: 50%;
   transform: translateX(-50%)
-    translateY(${props => (props.isClicked ? "17px" : props.top)});
+    translateY(${(props) => (props.isClicked ? "17px" : props.top)});
   border-radius: 50%;
   background: ${iconColor};
   width: 8px;
@@ -54,9 +54,9 @@ const Rectangle = styled("span", styleProps)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%)
-    rotate(${props => (props.isFirst ? "45deg" : "-45deg")});
+    rotate(${(props) => (props.isFirst ? "45deg" : "-45deg")});
   width: 8px;
-  height: ${props => (props.isClicked ? "44px" : "5px")};
+  height: ${(props) => (props.isClicked ? "44px" : "5px")};
   border-radius: 5px;
   background: ${iconColor};
   ${"" /* opacity: ${props => (props.isClicked ? 1 : 0)}; */}
@@ -69,12 +69,12 @@ export default {
     Wrapper,
     Icon,
     Dot,
-    Rectangle
+    Rectangle,
   },
   data() {
     return {
-      isClicked: false
+      isClicked: false,
     };
-  }
+  },
 };
 </script>

@@ -42,16 +42,16 @@ const rectangleDefaults = css`
 
 const Rectangle1 = styled("span", props)`
   ${rectangleDefaults};
-  transform: rotate(-45deg) scaleY(${props => (props.open ? 1.75 : 1)})
-    translate(${props => (props.open ? "2px, 1px" : 0)});
+  transform: rotate(-45deg) scaleY(${(props) => (props.open ? 1.75 : 1)})
+    translate(${(props) => (props.open ? "2px, 1px" : 0)});
   top: 8px;
   left: 8px;
 `;
 
 const Rectangle2 = styled("span", props)`
   ${rectangleDefaults};
-  transform: rotate(45deg) scaleY(${props => (props.open ? 1.75 : 1)})
-    translate(${props => (props.open ? "-2px, 1px" : 0)});
+  transform: rotate(45deg) scaleY(${(props) => (props.open ? 1.75 : 1)})
+    translate(${(props) => (props.open ? "-2px, 1px" : 0)});
   top: 8px;
   right: 8px;
 `;
@@ -61,7 +61,7 @@ export default {
     Wrapper,
     IconWrapper,
     Rectangle1,
-    Rectangle2
+    Rectangle2,
   },
   data() {
     return {
@@ -69,9 +69,9 @@ export default {
       menuItems: [
         { title: "Distance", icon: "location_on" },
         { title: "Best Match", icon: "grade" },
-        { title: "Rating", icon: "emoji_events" }
-      ]
+        { title: "Rating", icon: "emoji_events" },
+      ],
     };
-  }
+  },
 };
 </script>

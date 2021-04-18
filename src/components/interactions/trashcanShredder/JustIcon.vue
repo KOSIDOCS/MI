@@ -50,7 +50,7 @@ const StyledButton = styled("button", buttonProps)`
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  background: ${props => (props.deleted ? "#192E3F" : "#192E3F")};
+  background: ${(props) => (props.deleted ? "#192E3F" : "#192E3F")};
   color: #ffffff;
   cursor: pointer;
   outline: none;
@@ -58,7 +58,7 @@ const StyledButton = styled("button", buttonProps)`
   overflow: hidden;
 
   &:hover {
-    ${props => (!props.disabled ? "background: #192E3F" : "")};
+    ${(props) => (!props.disabled ? "background: #192E3F" : "")};
   }
 
   &:disabled {
@@ -128,13 +128,14 @@ const TrashCanPaper = styled("span", buttonProps)`
   width: 100%;
   height: 12px;
   transform: translateX(-50%)
-    translateY(${props => (props.clicked ? 0 : "12px")});
+    translateY(${(props) => (props.clicked ? 0 : "12px")});
   background: ${trashcanPaperColor};
 
-  ${props =>
+  ${(props) =>
     props.clicked
-      ? `animation: ${trashCanPaperAnimation} ease-in-out ${animationLengthNumber *
-          animationIterationCount}s`
+      ? `animation: ${trashCanPaperAnimation} ease-in-out ${
+          animationLengthNumber * animationIterationCount
+        }s`
       : ""}
 `;
 
@@ -174,7 +175,7 @@ const PaperUnshredded = styled("span", buttonProps)`
   height: 12px;
   background: ${paperUnshreddedColor};
   transform: translateY(-12px);
-  animation-name: ${props => (props.clicked ? paperUnshreddedAnimation : "")};
+  animation-name: ${(props) => (props.clicked ? paperUnshreddedAnimation : "")};
   animation-duration: ${animationLength};
   animation-timing-function: linear;
   animation-iteration-count: ${animationIterationCount};
@@ -208,7 +209,7 @@ const PaperShredded = styled("span", buttonProps)`
   height: 12px;
   background: ${paperShreddedColor};
   transform: translateY(-30px);
-  animation-name: ${props => (props.clicked ? paperShreddedAnimation : "")};
+  animation-name: ${(props) => (props.clicked ? paperShreddedAnimation : "")};
   animation-duration: ${animationLength};
   animation-timing-function: linear;
   animation-iteration-count: ${animationIterationCount};
@@ -225,12 +226,12 @@ export default {
     PaperUnshreddedWrapper,
     PaperUnshredded,
     PaperShreddedWrapper,
-    PaperShredded
+    PaperShredded,
   },
-  data: function() {
+  data: function () {
     return {
       clicked: false,
-      deleted: false
+      deleted: false,
     };
   },
   methods: {
@@ -246,7 +247,7 @@ export default {
           this.clicked = false;
         }, 2000);
       }, animationLengthNumber * animationIterationCount * 1024);
-    }
-  }
+    },
+  },
 };
 </script>

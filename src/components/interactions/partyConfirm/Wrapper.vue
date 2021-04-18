@@ -105,7 +105,7 @@ const buttonProps = {
   particleTop: String,
   particleLeft: String,
   particleStartDegrees: String,
-  particleAnimation: Number
+  particleAnimation: Number,
 };
 
 const cylyinderAnimation = keyframes`
@@ -248,7 +248,7 @@ const StyledButton = styled("button", buttonProps)`
   font-size: 1rem;
   background: #1d1f34;
   color: white;
-  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   outline: none;
   transition: background 0.25s;
 
@@ -267,7 +267,7 @@ const ButtonText = styled("span", buttonProps)`
   height: 56px;
   line-height: 56px;
 
-  ${props =>
+  ${(props) =>
     props.clicked
       ? `animation: ${buttonTextAnimation} ease-in-out
       ${animationDuration}`
@@ -275,8 +275,8 @@ const ButtonText = styled("span", buttonProps)`
 `;
 
 const ButtonText2 = styled("span", buttonProps)`
-  opacity: ${props => (props.clicked ? 1 : 0)};
-  ${props =>
+  opacity: ${(props) => (props.clicked ? 1 : 0)};
+  ${(props) =>
     props.clicked
       ? `animation: ${buttonText2Animation} ease-in-out
       ${animationDuration}`
@@ -302,7 +302,7 @@ const PartyPopperCylinderWrapper = styled("span", buttonProps)`
   justify-content: center;
   transition: transform 0.25s;
 
-  ${props =>
+  ${(props) =>
     props.clicked
       ? `animation: ${cylyinderAnimation} ease-in-out
       ${animationDuration}`
@@ -321,14 +321,14 @@ const PartyPopperStrings = styled("img", buttonProps)`
   width: 17px;
   transform-origin: 0% 100%;
 
-  ${props =>
+  ${(props) =>
     props.clicked
       ? `animation: ${cylyinderStringsAnimation} ease-in-out
       5s`
       : ""}
 `;
 
-const getParticleAnimation = particleAnimation => {
+const getParticleAnimation = (particleAnimation) => {
   let animation;
 
   switch (particleAnimation) {
@@ -349,7 +349,7 @@ const getParticleAnimation = particleAnimation => {
   `;
 };
 
-const getParticleStartDegress = particleAnimation => {
+const getParticleStartDegress = (particleAnimation) => {
   let startDegrees;
 
   switch (particleAnimation) {
@@ -372,21 +372,21 @@ const getParticleStartDegress = particleAnimation => {
 
 const PartyPopperParticle = styled("span", buttonProps)`
   position: absolute;
-  top: ${props => props.particleTop || 0};
-  left: ${props => props.particleLeft || "30px"};
-  width: ${props => props.particleScale}px;
-  height: ${props => props.particleScale * 0.75}px;
+  top: ${(props) => props.particleTop || 0};
+  left: ${(props) => props.particleLeft || "30px"};
+  width: ${(props) => props.particleScale}px;
+  height: ${(props) => props.particleScale * 0.75}px;
   border-top-left-radius: 50%;
   border-top-right-radius: 40%;
   border-bottom-right-radius: 80%;
   background: rgba(255, 0, 0, 0);
-  opacity: ${props => (props.clicked ? 1 : 0)};
+  opacity: ${(props) => (props.clicked ? 1 : 0)};
   transform: rotate(
-    -${props => getParticleStartDegress(props.particleAnimation)}deg
+    -${(props) => getParticleStartDegress(props.particleAnimation)}deg
   );
   transform-origin: 50% 50%;
 
-  ${props =>
+  ${(props) =>
     props.clicked ? getParticleAnimation(props.particleAnimation) : ""}
 
   &::before {
@@ -395,10 +395,10 @@ const PartyPopperParticle = styled("span", buttonProps)`
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: ${props => props.particleSize};
-    height: ${props => props.particleSize};
+    width: ${(props) => props.particleSize};
+    height: ${(props) => props.particleSize};
     border-radius: 50%;
-    background: ${props => props.particleColor};
+    background: ${(props) => props.particleColor};
   }
 `;
 
@@ -411,13 +411,13 @@ export default {
     PartyPopperCylinder,
     PartyPopperCylinderWrapper,
     PartyPopperStrings,
-    PartyPopperParticle
+    PartyPopperParticle,
   },
-  data: function() {
+  data: function () {
     return {
       clicked: false,
       partyPopper: require("@/assets/images/party-popper.png"),
-      partyPopperStrings: require("@/assets/images/party-popper-strings.png")
+      partyPopperStrings: require("@/assets/images/party-popper-strings.png"),
     };
   },
   methods: {
@@ -429,7 +429,7 @@ export default {
         this.clicked = false;
         // }, 2000);
       }, animationDurationNumber * 1000);
-    }
-  }
+    },
+  },
 };
 </script>

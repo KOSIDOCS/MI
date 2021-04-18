@@ -42,12 +42,12 @@ export default {
   props: {
     dots: Array,
     activeIndex: Number,
-    collabs: Array
+    collabs: Array,
   },
   components: {
     StyledWrapper,
     SwipeIndicator,
-    ViewCodeButton
+    ViewCodeButton,
     // BottombarDots,
     // BottombarLogo,
     // BottombarCollabs
@@ -55,7 +55,7 @@ export default {
   methods: {
     onDotClicked(dot) {
       this.$emit("dot-clicked", dot);
-    }
-  }
+    },
+  },
 };
 </script>

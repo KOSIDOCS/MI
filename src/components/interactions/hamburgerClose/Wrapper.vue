@@ -40,8 +40,8 @@ const StyledBackgroundImage = styled("img", imageProps)`
   top: -10%;
   left: 0;
   width: 110%;
-  transform: translateX(${props => (props.open ? "10px" : 0)})
-    scale(${props => (props.open ? "1.2, 1.2" : "1, 1")});
+  transform: translateX(${(props) => (props.open ? "10px" : 0)})
+    scale(${(props) => (props.open ? "1.2, 1.2" : "1, 1")});
   transform-origin: 50% 50%;
   transition: transform 0.25s ease-in-out;
 `;
@@ -68,7 +68,7 @@ const StyledSidebar = styled("div", sidebarProps)`
   height: 100%;
   padding: 2rem 1rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-  transform: translateX(${props => (props.open ? 0 : "-100%")});
+  transform: translateX(${(props) => (props.open ? 0 : "-100%")});
   transition: transform 0.25s ease-out;
 `;
 
@@ -78,17 +78,17 @@ export default {
     StyledBackgroundImage,
     StyledCrossButton,
     StyledSidebar,
-    MenuItem
+    MenuItem,
   },
   methods: {
     handleCrossButtonClicked() {
       this.open = !this.open;
-    }
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      open: undefined
+      open: undefined,
     };
-  }
+  },
 };
 </script>

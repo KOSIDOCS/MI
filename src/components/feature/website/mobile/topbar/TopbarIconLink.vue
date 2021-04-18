@@ -29,11 +29,11 @@ const StyledIcon = styled(FontAwesomeIcon)`
 export default {
   props: {
     linkUrl: String,
-    icon: String
+    icon: String,
   },
   components: {
     StyledLink,
-    StyledIcon
-  }
+    StyledIcon,
+  },
 };
 </script>

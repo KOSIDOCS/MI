@@ -32,7 +32,7 @@ const props = {
   iconColor: String,
   size: String,
   open: Boolean,
-  showShadow: Boolean
+  showShadow: Boolean,
 };
 
 const StyledButton = styled("button", props)`
@@ -40,11 +40,11 @@ const StyledButton = styled("button", props)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${props => props.size || "100px"};
-  height: ${props => props.size || "100px"};
+  width: ${(props) => props.size || "100px"};
+  height: ${(props) => props.size || "100px"};
   border-radius: 0.5rem;
-  background: ${props => props.background || "#6d77d5"}
-  box-shadow: ${props =>
+  background: ${(props) => props.background || "#6d77d5"}
+  box-shadow: ${(props) =>
     props.showShadow
       ? "0 24px 38px 3px rgba(0, 0, 0, 0.025), 0 9px 46px 8px rgba(0, 0, 0, 0.025), 0 11px 15px -7px rgba(0, 0, 0, 0.025);"
       : ""};
@@ -55,11 +55,13 @@ const StyledButton = styled("button", props)`
     }
 
     &:hover .line-1 {
-      ${props => (props.open ? "" : "transform: rotate(0) translate(0, -4px)")};
+      ${(props) =>
+        props.open ? "" : "transform: rotate(0) translate(0, -4px)"};
     }
 
     &:hover .line-3 {
-      ${props => (props.open ? "" : "transform: rotate(0) translate(0, 4px)")};
+      ${(props) =>
+        props.open ? "" : "transform: rotate(0) translate(0, 4px)"};
     }
   }
 `;
@@ -113,14 +115,14 @@ const line1AnimationOut = keyframes`
 
 const StyledLine1 = styled("div", props)`
   ${lineDefaults};
-  background: ${props => props.iconColor || "#ffffff"};
+  background: ${(props) => props.iconColor || "#ffffff"};
   top: 8px;
-  ${props =>
+  ${(props) =>
     props.open
       ? "transform: rotate(45deg) translate(4px, 6px)"
       : "transform: rotate(0) translate(0, 0)"};
 
-  ${props =>
+  ${(props) =>
     props.open === true
       ? `animation: ${line1AnimationIn} 0.5s linear`
       : props.open === false
@@ -130,10 +132,10 @@ const StyledLine1 = styled("div", props)`
 
 const StyledLine2 = styled("div", props)`
   ${lineDefaults};
-  background: ${props => props.iconColor || "#ffffff"};
+  background: ${(props) => props.iconColor || "#ffffff"};
   top: 16px;
-  transform: ${props => (props.open ? "rotate(0)" : "rotate(0) ")};
-  opacity: ${props => (props.open ? 0 : 1)};
+  transform: ${(props) => (props.open ? "rotate(0)" : "rotate(0) ")};
+  opacity: ${(props) => (props.open ? 0 : 1)};
   transition: opacity 0.25s;
 `;
 
@@ -169,14 +171,14 @@ const line3AnimationOut = keyframes`
 
 const StyledLine3 = styled("div", props)`
   ${lineDefaults};
-  background: ${props => props.iconColor || "#ffffff"};
+  background: ${(props) => props.iconColor || "#ffffff"};
   top: 24px;
-  ${props =>
+  ${(props) =>
     props.open
       ? "transform: rotate(-45deg) translate(8px, -6px)"
       : "transform: rotate(0) translate(0, 0)"};
 
-  ${props =>
+  ${(props) =>
     props.open === true
       ? `animation: ${line3AnimationIn} 0.5s linear`
       : props.open === false
@@ -191,7 +193,7 @@ export default {
     StyledIconWrapper,
     StyledLine1,
     StyledLine2,
-    StyledLine3
-  }
+    StyledLine3,
+  },
 };
 </script>

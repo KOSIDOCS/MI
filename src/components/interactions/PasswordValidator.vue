@@ -42,7 +42,7 @@ const StyledWrapper = styled("div", buttonProps)`
   background: white;
   border-radius: 0.5rem;
   border: 2px solid
-    ${props =>
+    ${(props) =>
       props.valid !== undefined
         ? props.valid
           ? validColor
@@ -74,7 +74,7 @@ const StyledButton = styled("button", buttonProps)`
   justify-content: center;
   width: 56px;
   height: 56px;
-  background: ${props =>
+  background: ${(props) =>
     props.valid === undefined
       ? backgroundColor
       : props.valid
@@ -92,7 +92,7 @@ const StyledButton = styled("button", buttonProps)`
     width: inherit;
     height: inherit;
     background: inherit;
-    transform: scaleX(${props => (props.submitted ? 10 : 1)});
+    transform: scaleX(${(props) => (props.submitted ? 10 : 1)});
     transition: transform ${transitionDuration};
   }
 `;
@@ -109,7 +109,7 @@ const StyledMessage = styled("div", buttonProps)`
   z-index: 3;
   transform: translate(-50%, -50%);
   font-weight: 700;
-  opacity: ${props => (props.submitted ? 1 : 0)};
+  opacity: ${(props) => (props.submitted ? 1 : 0)};
   color: white;
   text-align: center;
   white-space: nowrap;
@@ -123,7 +123,7 @@ export default {
     StyledShowPasswordButton,
     StyledButton,
     StyledButtonIcon,
-    StyledMessage
+    StyledMessage,
   },
   methods: {
     onClick() {
@@ -139,7 +139,7 @@ export default {
       if (!this.submitted) {
         this.valid = undefined;
       }
-    }
+    },
   },
   data() {
     return {
@@ -147,8 +147,8 @@ export default {
       value: String,
       valid: undefined,
       submitted: false,
-      showPassword: false
+      showPassword: false,
     };
-  }
+  },
 };
 </script>

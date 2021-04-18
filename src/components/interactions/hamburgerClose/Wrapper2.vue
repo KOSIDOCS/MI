@@ -18,17 +18,17 @@ const StyledWrapper = styled.div``;
 export default {
   components: {
     StyledWrapper,
-    CrossButton
+    CrossButton,
   },
   methods: {
     handleCrossButtonClicked() {
       this.open = !this.open;
-    }
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      open: undefined
+      open: undefined,
     };
-  }
+  },
 };
 </script>

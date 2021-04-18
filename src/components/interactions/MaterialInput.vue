@@ -32,7 +32,7 @@ const Wrapper = styled("div", wrapperProps)`
   height: 56px;
   background: ${backgroundColor};
   border-radius: 0.5rem;
-  border: 2px solid ${props => rgba("white", props.focused ? 0.85 : 0.5)};
+  border: 2px solid ${(props) => rgba("white", props.focused ? 0.85 : 0.5)};
   transition: border-color 0.35s;
 
   &:hover {
@@ -44,7 +44,7 @@ const Wrapper = styled("div", wrapperProps)`
   }
 `;
 
-const getTheTransform = notEmpty => {
+const getTheTransform = (notEmpty) => {
   return notEmpty
     ? "translate(0.625rem, -10px) scale(0.8)"
     : "translate(0.5rem, 15px)";
@@ -59,8 +59,8 @@ const Placeholder = styled("div", placeholderProps)`
   left: 0;
   padding: 0 0.25rem;
   font-weight: 700;
-  transform: ${props => getTheTransform(props.notEmpty)};
-  background: ${props => (props.notEmpty ? backgroundColor : "transparent")};
+  transform: ${(props) => getTheTransform(props.notEmpty)};
+  background: ${(props) => (props.notEmpty ? backgroundColor : "transparent")};
   transform-origin: 0% 0%;
   pointer-events: none;
   transition: transform 0.35s, background 0.35s, color 0.35s;
@@ -90,7 +90,7 @@ const clearButtonProps = { notEmpty: Boolean };
 const ClearButton = styled("button", clearButtonProps)`
   padding: 0 0.5rem;
   color: ${rgba("white", 0.57)};
-  opacity: ${props => (props.notEmpty ? 1 : 0)};
+  opacity: ${(props) => (props.notEmpty ? 1 : 0)};
   transition: opacity 0.25s, color 0.25s;
 
   &:hover {
@@ -103,12 +103,12 @@ export default {
     Wrapper,
     Placeholder,
     Textbox,
-    ClearButton
+    ClearButton,
   },
   data() {
     return {
       textboxValue: "",
-      focused: false
+      focused: false,
     };
   },
   methods: {
@@ -119,7 +119,7 @@ export default {
     },
     onBlur() {
       this.focused = false;
-    }
-  }
+    },
+  },
 };
 </script>

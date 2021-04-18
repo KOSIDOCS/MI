@@ -45,7 +45,7 @@ const StyledSwipeIcon = styled.span`
 export default {
   components: {
     StyledSwipeMessage,
-    StyledSwipeIcon
-  }
+    StyledSwipeIcon,
+  },
 };
 </script>

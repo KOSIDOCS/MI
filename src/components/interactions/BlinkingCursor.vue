@@ -34,7 +34,7 @@ const Textbox = styled.input`
 export default {
   components: {
     Wrapper,
-    Textbox
-  }
+    Textbox,
+  },
 };
 </script>

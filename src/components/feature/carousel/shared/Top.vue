@@ -1,9 +1,7 @@
 <template>
   <TopRow :textColor="textColor">
     <Waves :style="{ display: 'none' }" />
-    <span>
-      MI
-    </span>
+    <span> MI </span>
     <TopRightText :textColor="textColor" v-if="topRightText">
       {{ topRightText }}
     </TopRightText>
@@ -26,7 +24,7 @@ const TopRow = styled("div", scProps)`
   padding: 0 28px;
   font-size: 21px;
   font-weight: 600;
-  color: ${props =>
+  color: ${(props) =>
     rgba(props.theme.colorText || props.textColor || "#fff", 0.38)};
 `;
 
@@ -43,19 +41,19 @@ const Waves = styled.div`
 `;
 
 const TopRightText = styled("div", scProps)`
-  color: ${props =>
+  color: ${(props) =>
     props.textColor ? rgba(props.textColor, 0.38) : rgba("#fff", 0.57)};
 `;
 
 export default {
   props: {
     textColor: String,
-    topRightText: String
+    topRightText: String,
   },
   components: {
     TopRow,
     Waves,
-    TopRightText
-  }
+    TopRightText,
+  },
 };
 </script>

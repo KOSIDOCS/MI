@@ -33,7 +33,7 @@ const scProps = {
   backgroundColor: String,
   outlineColor: String,
   isFocused: Boolean,
-  notEmpty: Boolean
+  notEmpty: Boolean,
 };
 
 const OuterWrapper = styled.div`
@@ -44,7 +44,7 @@ const OuterWrapper = styled.div`
 const Wrapper = styled("div", scProps)`
   &::before {
     content: "";
-    opacity: ${props => (props.isFocused ? 1 : 0)};
+    opacity: ${(props) => (props.isFocused ? 1 : 0)};
     position: absolute;
     z-index: 1;
     background: #608dc7;
@@ -71,10 +71,10 @@ const Textbox = styled("input", scProps)`
   width: 200px;
   border: 2px solid #3977bd;
   text-indent: 0.5rem;
-  color: ${props => props.textboxColor};
+  color: ${(props) => props.textboxColor};
 
   &::placeholder {
-    color: ${props => props.placeholderColor};
+    color: ${(props) => props.placeholderColor};
   }
 `;
 
@@ -84,7 +84,7 @@ const ClearButton = styled("button", scProps)`
   top: 16px;
   right: 14px;
   color: ${rgba("black", 0.5)};
-  opacity: ${props => (props.isFocused && props.notEmpty ? 1 : 0)};
+  opacity: ${(props) => (props.isFocused && props.notEmpty ? 1 : 0)};
   transition: opacity ${transitionDuration};
 `;
 
@@ -94,12 +94,12 @@ export default {
     OuterWrapper,
     Wrapper,
     Textbox,
-    ClearButton
+    ClearButton,
   },
   data() {
     return {
       focused: false,
-      textboxValue: ""
+      textboxValue: "",
     };
   },
   methods: {
@@ -110,7 +110,7 @@ export default {
     },
     onBlur() {
       this.focused = false;
-    }
-  }
+    },
+  },
 };
 </script>

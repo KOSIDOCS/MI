@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
 
 export default {
   components: {
-    StyledWrapper
-  }
+    StyledWrapper,
+  },
 };
 </script>

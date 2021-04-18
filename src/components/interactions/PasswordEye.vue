@@ -29,13 +29,13 @@ const EyeButton = styled("button", eyeProps)`
   width: 80px;
   height: 80px;
   flex: 0 0 80px;
-  background: ${props => (props.showPassword ? colorShow : colorHide)};
+  background: ${(props) => (props.showPassword ? colorShow : colorHide)};
   border-radius: 50%;
   transition: background ${transitionDuration};
 
   & > i {
     font-size: 60px;
-    color: ${props => (props.showPassword ? colorTextShow : colorTextHide)};
+    color: ${(props) => (props.showPassword ? colorTextShow : colorTextHide)};
     transition: color ${transitionDuration};
   }
 `;
@@ -58,9 +58,11 @@ const EyeLine = styled("div", eyeProps)`
   width: 80%;
   height: 5px;
   transform: translate(-50%, -50%)
-    scaleX(${props => (props.showPassword ? 1 : 0)});
-  ${"" /* translateX(${props => (props.showPassword ? "4px" : "-110%")})
-translateY(-6px); */};
+    scaleX(${(props) => (props.showPassword ? 1 : 0)});
+  ${
+    "" /* translateX(${props => (props.showPassword ? "4px" : "-110%")})
+translateY(-6px); */
+  };
   transform-origin: 0% 50%;
   background: ${colorTextShow};
   transition: transform ${transitionDuration}, opacity 0.15s;
@@ -72,7 +74,7 @@ translateY(-6px); */};
     left: 0;
     width: 100%;
     height: inherit;
-    background: ${props => (props.showPassword ? colorShow : colorHide)};
+    background: ${(props) => (props.showPassword ? colorShow : colorHide)};
   }
 `;
 
@@ -80,12 +82,12 @@ export default {
   components: {
     EyeButton,
     EyeLine,
-    EyeLineWrapper
+    EyeLineWrapper,
   },
   data() {
     return {
-      showPassword: true
+      showPassword: true,
     };
-  }
+  },
 };
 </script>

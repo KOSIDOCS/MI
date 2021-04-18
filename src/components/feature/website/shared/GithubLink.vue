@@ -15,32 +15,32 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 const props = {
   size: {
     type: String,
-    default: "56px"
+    default: "56px",
   },
   iconSize: {
     type: String,
-    default: "24px;"
-  }
+    default: "24px;",
+  },
 };
 
 const StyledGithubLink = styled("a", props)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${props => props.size};
-  height: ${props => props.size};
+  width: ${(props) => props.size};
+  height: ${(props) => props.size};
   color: ${rgba("white", 0.75)};
 `;
 
 const StyledGithubIcon = styled(FontAwesomeIcon, props)`
-  font-size: ${props => props.iconSize};
+  font-size: ${(props) => props.iconSize};
 `;
 
 export default {
   props: props,
   components: {
     StyledGithubLink,
-    StyledGithubIcon
-  }
+    StyledGithubIcon,
+  },
 };
 </script>

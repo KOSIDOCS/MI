@@ -171,7 +171,7 @@ const StyledImage = styled("img", imageProps)`
   height: 90px;
   border: 5px solid rgba(255, 255, 255, 0.15);
   transform: translateX(
-    ${props => (props.isMiddle ? "-39px" : props.isLast ? "-78px" : "0")}
+    ${(props) => (props.isMiddle ? "-39px" : props.isLast ? "-78px" : "0")}
   );
 `;
 
@@ -228,7 +228,7 @@ export default {
     ImageNext,
     Top,
     Middle,
-    Bottom
-  }
+    Bottom,
+  },
 };
 </script>

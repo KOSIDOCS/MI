@@ -75,7 +75,7 @@ export default {
     Stage,
     Wrapper,
     Shadow,
-    TheButton
-  }
+    TheButton,
+  },
 };
 </script>

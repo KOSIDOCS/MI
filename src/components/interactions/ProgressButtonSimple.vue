@@ -31,7 +31,7 @@ const styleProps = {
   isComplete: Boolean,
   ringColor: String,
   duration: Number,
-  animationIndex: Number
+  animationIndex: Number,
 };
 //const buttonColor = "#9A6FD8";
 
@@ -62,14 +62,14 @@ const progressAnimation = keyframes`
 `;
 
 const ProgressCircle = styled("circle", styleProps)`
-  stroke: ${props =>
+  stroke: ${(props) =>
     rgba(props.ringColor, props.animationIndex === 0 ? 0.5 : 1)};
   stroke-width: 10;
   fill: transparent;
-  stroke-dashoffset: ${props => (props.isClicked === undefined ? 138 : 0)};
+  stroke-dashoffset: ${(props) => (props.isClicked === undefined ? 138 : 0)};
   stroke-dasharray: 138 138;
 
-  ${props =>
+  ${(props) =>
     props.isClicked === true && props.isComplete === false
       ? `animation: ${progressAnimation} ${props.duration}ms`
       : ""};
@@ -94,7 +94,7 @@ export default {
     Wrapper,
     ProgressSvg,
     ProgressCircle,
-    RoundButton
+    RoundButton,
   },
   methods: {
     onClick() {
@@ -106,13 +106,13 @@ export default {
           this.isComplete = false;
         }, 2500);
       }, duration);
-    }
+    },
   },
   data() {
     return {
       isClicked: undefined,
-      isComplete: false
+      isComplete: false,
     };
-  }
+  },
 };
 </script>

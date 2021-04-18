@@ -46,7 +46,7 @@ const styleProps = {
   isOpen: Boolean,
   top: String,
   left: String,
-  textColor: String
+  textColor: String,
 };
 
 const Wrapper = styled.div`
@@ -94,14 +94,14 @@ const FabButton = styled("button", styleProps)`
   width: ${buttonSize};
   height: ${buttonSize};
   border-radius: 50%;
-  transform: rotate(${props => (props.isOpen ? "135deg" : "0deg")});
+  transform: rotate(${(props) => (props.isOpen ? "135deg" : "0deg")});
 
-  ${props =>
+  ${(props) =>
     props.isOpen === true
       ? `animation: ${fabIconAnimationIn} ${animationDuration}s linear`
       : ""};
 
-  ${props =>
+  ${(props) =>
     props.isOpen === false
       ? `animation: ${fabIconAnimationOut} ${animationDuration}s linear`
       : ""};
@@ -141,14 +141,14 @@ const MenuWrapper = styled("div", styleProps)`
   left: 0;
   width: 200px;
   height: 200px;
-  transform: rotate(${props => (props.isOpen ? "0deg" : "-135deg")});
+  transform: rotate(${(props) => (props.isOpen ? "0deg" : "-135deg")});
 
-  ${props =>
+  ${(props) =>
     props.isOpen === true
       ? `animation: ${menuWrapperAnimationIn} ${animationDuration}s`
       : ""};
 
-  ${props =>
+  ${(props) =>
     props.isOpen === false
       ? `animation: ${menuWrapperAnimationOut} ${animationDuration}s linear`
       : ""};
@@ -188,16 +188,16 @@ const MenuCircle = styled("div", styleProps)`
   height: 220px;
   border-radius: 50%;
   border: 50px solid ${rgba("white", 0.05)};
-  opacity: ${props => (props.isOpen ? 1 : 0)};
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
   transform: translate(-50%, -50%);
 
   transform-origin: 50% 50%;
 
-  ${props =>
+  ${(props) =>
     props.isOpen === true
       ? `animation: ${menuAnimationIn} ${animationDuration}s`
       : ""};
-  ${props =>
+  ${(props) =>
     props.isOpen === false
       ? `animation: ${menuAnimationOut} ${animationDuration}s`
       : ""};
@@ -229,17 +229,17 @@ const iconAnimationOut = keyframes`
 
 const IconButton = styled("button", styleProps)`
   position: absolute;
-  top: ${props => props.top};
-  left: ${props => props.left};
-  color: ${props => props.textColor};
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
+  color: ${(props) => props.textColor};
   width: 40px;
   height: 40px;
   font-size: 22px;
-  ${props =>
+  ${(props) =>
     props.isOpen === true
       ? `animation: ${iconAnimationIn} ${animationDuration / 4}s`
       : ""};
-  ${props =>
+  ${(props) =>
     props.isOpen === false
       ? `animation: ${iconAnimationOut} ${animationDuration}s linear`
       : ""};
@@ -257,12 +257,12 @@ export default {
     FabButton,
     MenuWrapper,
     MenuCircle,
-    IconButton
+    IconButton,
   },
   data() {
     return {
-      isOpen: undefined
+      isOpen: undefined,
     };
-  }
+  },
 };
 </script>

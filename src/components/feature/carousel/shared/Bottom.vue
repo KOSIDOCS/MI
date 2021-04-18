@@ -35,7 +35,7 @@ const arrowProps = { textColor: String };
 
 const ArrowIcon = styled("span", arrowProps)`
   font-size: 42px;
-  color: ${props => rgba(props.textColor || "white", 0.45)};
+  color: ${(props) => rgba(props.textColor || "white", 0.45)};
 `;
 
 const SaveIcon = styled.i`
@@ -58,11 +58,11 @@ const SaveIcon = styled.i`
 export default {
   props: {
     textColor: String,
-    handleColor: String
+    handleColor: String,
   },
   data() {
     return {
-      handleUrl: "@/assets/images/arrow.png"
+      handleUrl: "@/assets/images/arrow.png",
     };
   },
   mounted() {
@@ -82,7 +82,7 @@ export default {
     BottomRow,
     FrontendJoe,
     SaveIcon,
-    ArrowIcon
-  }
+    ArrowIcon,
+  },
 };
 </script>

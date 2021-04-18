@@ -47,7 +47,7 @@ export default {
     Wrapper,
     Mobile,
     Desktop,
-    IntroMessage
+    IntroMessage,
   },
   mixins: [VueScreenSize.VueScreenSizeMixin],
   data() {
@@ -60,7 +60,7 @@ export default {
           image: require("@/assets/images/leeo.png"),
           component: HamburgerClose,
           background: "#4f57ad",
-          githubUrl: "hamburgerClose/CrossButton.vue"
+          githubUrl: "hamburgerClose/CrossButton.vue",
         },
         {
           id: 2,
@@ -69,7 +69,7 @@ export default {
           image: require("@/assets/images/dan.png"),
           component: TrashcanShredder,
           background: "#1E064B",
-          githubUrl: "trashcanShredder/Wrapper.vue"
+          githubUrl: "trashcanShredder/Wrapper.vue",
         },
         {
           id: 3,
@@ -78,7 +78,7 @@ export default {
           image: require("@/assets/images/ale.png"),
           component: NavbarSlider,
           background: "#65A9CD",
-          githubUrl: "NavbarSlider.vue"
+          githubUrl: "NavbarSlider.vue",
         },
         {
           id: 4,
@@ -88,7 +88,7 @@ export default {
           component: RippleButton,
           componentProps: { buttonId: "list-ripple" },
           background: "#354286",
-          githubUrl: "rippleButton/WrapperCss.vue"
+          githubUrl: "rippleButton/WrapperCss.vue",
         },
         {
           id: 5,
@@ -97,7 +97,7 @@ export default {
           image: require("@/assets/images/mike.png"),
           component: PaperPlaneSend,
           background: "#2c204a",
-          githubUrl: "PaperPlaneSend.vue"
+          githubUrl: "PaperPlaneSend.vue",
         },
         {
           id: 6,
@@ -106,7 +106,7 @@ export default {
           image: require("@/assets/images/jan.png"),
           component: UnderlineButton,
           background: "#9d9ddc",
-          githubUrl: "UnderlineButton.vue"
+          githubUrl: "UnderlineButton.vue",
         },
         {
           id: 7,
@@ -115,7 +115,7 @@ export default {
           image: require("@/assets/images/miriam.png"),
           component: PasswordValidator,
           background: "#a0b6da",
-          githubUrl: "PasswordValidator.vue"
+          githubUrl: "PasswordValidator.vue",
         },
         {
           id: 8,
@@ -124,7 +124,7 @@ export default {
           image: require("@/assets/images/lia.png"),
           component: UnderlineTabs,
           background: "#6e46bb",
-          githubUrl: "UnderlineTabs.vue"
+          githubUrl: "UnderlineTabs.vue",
         },
         {
           id: 9,
@@ -133,7 +133,7 @@ export default {
           image: require("@/assets/images/alex.png"),
           component: CopyButton,
           background: "#691bda",
-          githubUrl: "CopyButton.vue"
+          githubUrl: "CopyButton.vue",
         },
         {
           id: 10,
@@ -142,7 +142,7 @@ export default {
           image: require("@/assets/images/abdul.png"),
           component: MaterialCheckbox,
           background: "#beadff",
-          githubUrl: "MaterialCheckbox.vue"
+          githubUrl: "MaterialCheckbox.vue",
         },
         {
           id: 11,
@@ -151,7 +151,7 @@ export default {
           image: require("@/assets/images/jan.png"),
           component: FillUpButton,
           background: "#313d56",
-          githubUrl: "FillUpButton.vue"
+          githubUrl: "FillUpButton.vue",
         },
         {
           id: 12,
@@ -160,7 +160,7 @@ export default {
           image: require("@/assets/images/gabriele.png"),
           component: OutlinedInput,
           background: "#59a3f7",
-          githubUrl: "OutlinedInput.vue"
+          githubUrl: "OutlinedInput.vue",
         },
         {
           id: 13,
@@ -169,7 +169,7 @@ export default {
           image: require("@/assets/images/mauricio.png"),
           component: ShadowButton,
           background: "#5018a2",
-          githubUrl: "ShadowButton.vue"
+          githubUrl: "ShadowButton.vue",
         },
         {
           id: 14,
@@ -178,7 +178,7 @@ export default {
           image: require("@/assets/images/dan.png"),
           component: PulsingBadge,
           background: "#5ba789",
-          githubUrl: "pulsingBadge/NavbarBadge.vue"
+          githubUrl: "pulsingBadge/NavbarBadge.vue",
         },
         {
           id: 15,
@@ -187,7 +187,7 @@ export default {
           image: require("@/assets/images/trups.png"),
           component: HighlightLink,
           background: "#6701ce",
-          githubUrl: "HighlightLink.vue"
+          githubUrl: "HighlightLink.vue",
         },
         {
           id: 16,
@@ -196,7 +196,7 @@ export default {
           image: require("@/assets/images/thalion.png"),
           component: SwitchInput,
           background: "#38384c",
-          githubUrl: "SwitchInput.vue"
+          githubUrl: "SwitchInput.vue",
         },
         {
           id: 17,
@@ -205,7 +205,7 @@ export default {
           image: require("@/assets/images/miriam.png"),
           component: PasswordValidator2,
           background: "#3a0b80",
-          githubUrl: "PasswordValidator2.vue"
+          githubUrl: "PasswordValidator2.vue",
         },
         {
           id: 18,
@@ -214,7 +214,7 @@ export default {
           image: require("@/assets/images/mike.png"),
           component: ProgressButton,
           background: "#1d1935",
-          githubUrl: "ProgressButton.vue"
+          githubUrl: "ProgressButton.vue",
         },
         {
           id: 19,
@@ -223,7 +223,7 @@ export default {
           image: require("@/assets/images/gabriele.png"),
           component: MaterialInput,
           background: "#7C12BA",
-          githubUrl: "MaterialInput.vue"
+          githubUrl: "MaterialInput.vue",
         },
         {
           id: 20,
@@ -232,10 +232,10 @@ export default {
           image: require("@/assets/images/karina.png"),
           component: DropdownButton,
           background: "#461d67",
-          githubUrl: "DropdownButton.vue"
-        }
-      ]
+          githubUrl: "DropdownButton.vue",
+        },
+      ],
     };
-  }
+  },
 };
 </script>

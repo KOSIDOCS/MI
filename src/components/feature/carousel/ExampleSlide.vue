@@ -107,7 +107,7 @@ export default {
     ImagePrev,
     Top,
     Middle,
-    Bottom
-  }
+    Bottom,
+  },
 };
 </script>

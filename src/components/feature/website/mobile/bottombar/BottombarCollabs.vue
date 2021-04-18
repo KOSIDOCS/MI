@@ -54,19 +54,19 @@ const StyledImage = styled.img`
 
 export default {
   props: {
-    collabs: Array
+    collabs: Array,
   },
   components: {
     StyledWrapper,
     StyledImageWrapper,
-    StyledImage
+    StyledImage,
   },
-  data: function() {
+  data: function () {
     return {
       danImage: require("@/assets/images/dan.png"),
       liaImage: require("@/assets/images/lia.png"),
-      mikeImage: require("@/assets/images/mike.png")
+      mikeImage: require("@/assets/images/mike.png"),
     };
-  }
+  },
 };
 </script>

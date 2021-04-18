@@ -10,7 +10,7 @@ import styled, { keyframes } from "vue-styled-components";
 const itemProps = {
   open: Boolean,
   index: Number,
-  icon: String
+  icon: String,
 };
 
 const menuItem1Animation = keyframes`
@@ -70,7 +70,7 @@ const menuItem4Animation = keyframes`
   }
 `;
 
-const getMenuItemAnimation = index => {
+const getMenuItemAnimation = (index) => {
   switch (index) {
     case 1:
       return menuItem1Animation;
@@ -87,15 +87,15 @@ const StyledMenuItem = styled("div", itemProps)`
   font-size: 0.75rem !important;
   color: rgba(255, 255, 255, 0.75);
   padding: 0.225rem 0;
-  animation: ${props => getMenuItemAnimation(props.index)} 0.75s;
-  opacity: ${props => (props.open ? 1 : 0)};
+  animation: ${(props) => getMenuItemAnimation(props.index)} 0.75s;
+  opacity: ${(props) => (props.open ? 1 : 0)};
   transition: opacity 0.25s;
 `;
 
 export default {
   props: itemProps,
   components: {
-    StyledMenuItem
-  }
+    StyledMenuItem,
+  },
 };
 </script>

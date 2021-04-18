@@ -1,9 +1,7 @@
 <template>
   <button @click="$emit('viewcode-clicked')" class="button">
     <i class="material-icons-outlined">code</i>
-    <span class="button-text">
-      View Code
-    </span>
+    <span class="button-text"> View Code </span>
   </button>
 </template>
 

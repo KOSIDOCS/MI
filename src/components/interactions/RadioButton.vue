@@ -53,8 +53,8 @@ const RadioButtonDot = styled("div", props)`
   height: 12px;
   border-radius: 50%;
   background: white;
-  opacity: ${props => (props.isChecked === "true" ? 1 : 0)};
-  transform: scale(${props => (props.isChecked === "true" ? 1 : 0.25)});
+  opacity: ${(props) => (props.isChecked === "true" ? 1 : 0)};
+  transform: scale(${(props) => (props.isChecked === "true" ? 1 : 0.25)});
 
   transition: transform 0.35s, opacity 0.35s;
 `;
@@ -70,12 +70,12 @@ export default {
     RadioButtonWrapper,
     RadioButtonDot,
     RadioButtonDotWrapper,
-    RadioButtonLabel
+    RadioButtonLabel,
   },
   data() {
     return {
-      radioValue: "true"
+      radioValue: "true",
     };
-  }
+  },
 };
 </script>
