@@ -59,16 +59,12 @@ export default {
           text: "Website",
         },
         {
-          url: "/insta/first-slide",
-          text: "First",
+          url: "/insta/react",
+          text: "React MI",
         },
         {
-          url: "/insta/example-slide",
-          text: "Example",
-        },
-        {
-          url: "/insta/dev-slide",
-          text: "Dev",
+          url: "/insta/flutter",
+          text: "Flutter MI",
         },
       ],
     };

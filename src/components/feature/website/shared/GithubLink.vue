@@ -1,7 +1,7 @@
 <template>
   <StyledGithubLink
     target="_blank"
-    href="https://github.com/vuezy/mi/tree/master/src/components/interactions"
+    href="https://github.com/KOSIDOCS?tab=repositories"
   >
     <StyledGithubIcon :icon="['fab', 'github']" />
   </StyledGithubLink>

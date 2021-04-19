@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Website from "@/components/feature/website/Wrapper";
+import CommingSoon from "@/components/feature/carousel/shared/CommingSoon";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,16 @@ const routes = [
         props: true,
       },
     ],
+  },
+  {
+    path: "/insta/react",
+    name: "React MI",
+    component: CommingSoon,
+  },
+  {
+    path: "/insta/flutter",
+    name: "Flutter MI",
+    component: CommingSoon,
   },
 ];
 

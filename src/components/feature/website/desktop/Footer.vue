@@ -5,32 +5,33 @@
 
       <ProjectCards>
         <ProjectCard
-          background="#459a79"
-          href="https://vooze.vuezythemes.com/"
+          background="#0F47C5"
+          href="https://meowjobapp.herokuapp.com/"
           target="_blank"
         >
           <ProjectIcon>
-            <font-awesome-icon :icon="['fab', 'vuejs']" />
+            <font-awesome-icon :icon="['fab', 'react']" />
           </ProjectIcon>
           <div>
-            <ProjectTitle>Vooze</ProjectTitle>
+            <ProjectTitle>Meow</ProjectTitle>
             <ProjectDescription>
-              Admin template built in Vue with Styled Components.
+             Job Board Platform built in React with Styled Components.
             </ProjectDescription>
           </div>
         </ProjectCard>
         <ProjectCard
           background="#8e6ecd"
-          href="http://frontendjoe.com/"
+           href="https://github.com/KOSIDOCS/"
           target="_blank"
         >
           <ProjectIcon>
             <font-awesome-icon :icon="['fab', 'vuejs']" />
           </ProjectIcon>
           <div>
-            <ProjectTitle>Frontendjoe</ProjectTitle>
+            <ProjectTitle>Kosidocs</ProjectTitle>
             <ProjectDescription>
-              Personal website built in Vue, SCSS & Vue's Nuxt framework.
+              Personal website built in Vue, SCSS, TypeScript & Styled
+              Components.
             </ProjectDescription>
           </div>
         </ProjectCard>
@@ -38,13 +39,13 @@
     </ProjectsWrapper>
     <FooterMain>
       <FooterMainContent>
-        <FrontendJoe :src="require('@/assets/images/joe.png')" />
+        <FrontendJoe :src="require('@/assets/images/kosidocs-img.svg')" />
         <div>
-          <FooterMainTitle>By Joe Harrison</FooterMainTitle>
-          <FooterMainAuthor>@frontendjoe</FooterMainAuthor>
+          <FooterMainTitle>By Kosiso Precious</FooterMainTitle>
+          <FooterMainAuthor>@kosidocs</FooterMainAuthor>
           <FooterMainText>
             Micro Interaction Vuejs code is free to use, licensed under MIT.
-            Design & code © Joe Harrison, 2020.
+            code © Kosiso Precious, 2021.
           </FooterMainText>
         </div>
         <SocialMedia>
@@ -52,14 +53,14 @@
             v-tippy="{ distance: 20 }"
             content="Instagram"
             @click="
-              handleSocialButtonClick('https://www.instagram.com/frontendjoe/')
+              handleSocialButtonClick('https://www.instagram.com/kosidocs/')
             "
             class="icofont-instagram"
           />
           <SocialButton
             v-tippy="{ distance: 20 }"
             content="GitHub"
-            @click="handleSocialButtonClick('https://github.com/vuezy')"
+            @click="handleSocialButtonClick('https://github.com/KOSIDOCS/')"
             class="icofont-github"
           />
           <SocialButton disabled class="icofont-youtube" />

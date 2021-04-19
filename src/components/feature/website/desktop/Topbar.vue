@@ -4,7 +4,7 @@
       <GithubLink />
     </MenuButton>
     <AppTitle> Micro Interactions </AppTitle>
-    <Instagram href="https://instagram.com/frontendjoe" target="_blank">
+    <Instagram href="https://www.instagram.com/kosidocs" target="_blank">
       <i class="icofont-instagram"></i>
     </Instagram>
   </Wrapper>

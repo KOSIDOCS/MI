@@ -9,6 +9,7 @@ import {
   faGithub,
   faVuejs,
   faInstagram,
+  faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import { faTag, faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -24,6 +25,7 @@ library.add(faVuejs);
 library.add(faTag);
 library.add(faEdit);
 library.add(faTrashAlt);
+library.add(faReact);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

@@ -5,10 +5,10 @@
     >
     <CardTitle>Welcome!</CardTitle>
     <CardText
-      >Micro Interactions or MI, is an Instagram tutorial series. The aim is to
-      simplify coding up animated interactions.</CardText
+      >Micro Interactions or MI, is a showcase of my daily practice code piece.
+      The aim is to share my resources with other dev.</CardText
     >
-    <CardLink href="https://www.instagram.com/frontendjoe/" target="_blank">
+    <CardLink href="https://www.instagram.com/kosidocs/" target="_blank">
       <span>See on Instagram</span>
     </CardLink>
   </Wrapper>
