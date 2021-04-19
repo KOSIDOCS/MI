@@ -5,13 +5,6 @@
       v-if="true"
       v-on:viewcode-clicked="$emit('viewcode-clicked')"
     />
-    <!-- <BottombarLogo />
-    <BottombarDots
-      :activeIndex="activeIndex"
-      v-on:dot-clicked="onDotClicked"
-      :dots="dots"
-    />
-    <BottombarCollabs :collabs="collabs" /> -->
   </StyledWrapper>
 </template>
 
@@ -19,9 +12,6 @@
 import styled from "vue-styled-components";
 import SwipeIndicator from "./SwipeIndicator";
 import ViewCodeButton from "./ViewCodeButton";
-// import BottombarDots from "./BottombarDots";
-// import BottombarLogo from "./BottombarLogo";
-// import BottombarCollabs from "./BottombarCollabs";
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -48,9 +38,6 @@ export default {
     StyledWrapper,
     SwipeIndicator,
     ViewCodeButton,
-    // BottombarDots,
-    // BottombarLogo,
-    // BottombarCollabs
   },
   methods: {
     onDotClicked(dot) {

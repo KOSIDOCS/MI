@@ -1,7 +1,7 @@
 <template>
   <StyledLogoWrapper>
-    <StyledJoeImage content="@frontendjoe" v-tippy :src="joeImage" />
-    <StyledLogoText> @frontendjoe </StyledLogoText>
+    <StyledJoeImage content="@kosidocs" v-tippy :src="kosiImage" />
+    <StyledLogoText> @kosidocs </StyledLogoText>
   </StyledLogoWrapper>
 </template>
 
@@ -41,7 +41,7 @@ export default {
   },
   data: function () {
     return {
-      joeImage: require("@/assets/images/joe.png"),
+      kosiImage: require("@/assets/images/kosidocs-img.svg"),
     };
   },
 };

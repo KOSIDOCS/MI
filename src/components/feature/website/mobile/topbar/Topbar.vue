@@ -1,9 +1,9 @@
 <template>
   <StyledWrapper>
-    <TopbarIconLink linkUrl="https://github.com/vuezy/mi" icon="github" />
+    <TopbarIconLink linkUrl="https://github.com/KOSIDOCS/MI" icon="github" />
     <TopbarTitle />
     <TopbarIconLink
-      linkUrl="https://www.instagram.com/frontendjoe/"
+      linkUrl="https://www.instagram.com/kosidocs/"
       icon="instagram"
     />
   </StyledWrapper>
