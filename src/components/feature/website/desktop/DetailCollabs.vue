@@ -1,13 +1,13 @@
 <template>
   <Wrapper>
     <Collab
-      href="https://instagram.com/frontendjoe"
+      href="https://instagram.com/kosidocs"
       target="_blank"
       v-tippy
-      content="@frontendjoe"
+      content="@kosidocs"
     >
-      <CollabImage :src="require('@/assets/images/joe.png')" />
-      <CollabName>@frontendjoe</CollabName>
+      <CollabImage :src="require('@/assets/images/kosidocs-img.svg')" />
+      <CollabName>@kosidocs</CollabName>
     </Collab>
     <Collab
       :href="`https://instagram.com/${collabInsta}`"

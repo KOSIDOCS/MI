@@ -1,5 +1,12 @@
 <template>
-  <StyledTicketVisual id="ticket">
+  <StyledTicketVisual
+    id="ticket"
+    @mousemove="onMouseMove"
+    @mouseleave="onMouseLeave"
+    :style="{
+      transform: `perspective(1000px) rotateX(${rotateX}) rotateY(${rotateY})`,
+    }"
+  >
     <StyledCurvesLeft />
     <StyledCurvesRight />
     <StyledTicketVisualWrapper>
@@ -116,11 +123,12 @@ const StyledProfileName = styled.p`
   font-size: calc(32px * var(--size));
   margin: 10px 0 5px 20px;
   font-weight: 700;
+  color: white !important;
 `;
 
 const StyledProfileUsername = styled.p`
   margin: 0 0 5px 20px;
-  color: #8a8f98;
+  color: #8a8f98 !important;
   display: flex;
 `;
 
@@ -143,6 +151,7 @@ const StyledTicketNumber = styled.div`
   padding-bottom: 35px;
   width: calc(320px - 10px);
   border-bottom: 2px dashed #333;
+  color: white !important;
 `;
 
 const StyledTicketVisualWrapper = styled.div`
@@ -222,18 +231,47 @@ export default {
     StyledTicketEvent,
     StyledNumberWrapper,
   },
-  mounted: function () {
-    window.addEventListener("mousemove", (e) => {
-      // some code to run every time a user moves the mouse cursor
-      const ticketElm = document.getElementById("ticket");
-      const { x, y, width, height } = ticketElm.getBoundingClientRect();
-      const centerPoint = { x: x + width / 2, y: y + height / 2 };
+  data() {
+    return {
+      cardWidth: 0,
+      degIncrement: 1.3,
+      rotateX: "0deg",
+      rotateY: "0deg",
+    };
+  },
+  methods: {
+    onMouseMove(e) {
+      const event = e || window.event;
+      const target = event.target || event.srcElement;
+      const rect = target.getBoundingClientRect();
+      const cardWidth = 650;
 
-      const degreeX = (e.clientY - centerPoint.y) * 0.008;
-      const degreeY = (e.clientX - centerPoint.x) * -0.008;
+      const degIncrement = this.degIncrement;
 
-      ticketElm.style.transform = `perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg)`;
-    });
+      const getRotateDeg = (input) => {
+        if (input < cardWidth * 0.33) {
+          return `${degIncrement * 3}deg`;
+        } else if (input >= cardWidth * 0.33 && input < cardWidth * 0.66) {
+          return `${degIncrement}deg`;
+        } else if (input >= cardWidth * 0.66 && input < cardWidth * 0.5) {
+          return "0deg";
+        } else if (input >= cardWidth * 0.5 && input < cardWidth * 0.33) {
+          return `-${degIncrement}deg`;
+        } else {
+          return `-${degIncrement * 2}deg`;
+        }
+      };
+
+      const rotateX = getRotateDeg(window.event.clientY - rect.top);
+      const rotateY = getRotateDeg(window.event.clientX - rect.left);
+
+      this.rotateX = rotateX;
+      this.rotateY = rotateY;
+    },
+    onMouseLeave() {
+      this.rotateX = "0deg";
+      this.rotateY = "0deg";
+    },
   },
 };
 </script>

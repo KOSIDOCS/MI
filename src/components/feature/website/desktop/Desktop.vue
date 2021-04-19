@@ -353,7 +353,7 @@ export default {
 
       axios
         .get(
-          `https://raw.githubusercontent.com/vuezy/mi/master/src/components/interactions/${activeItem.githubUrl}`,
+          `https://raw.githubusercontent.com/KOSIDOCS/MI/master/src/components/interactions/${activeItem.githubUrl}`,
           { crossdomain: true }
         )
         .then((response) => {

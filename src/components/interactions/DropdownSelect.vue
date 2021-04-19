@@ -178,11 +178,11 @@ export default {
   data() {
     return {
       open: false,
-      selected: "Filter By",
+      selected: "Select Sports",
       menuItems: [
-        { title: "Distance", icon: "location_on" },
-        { title: "Best Match", icon: "grade" },
-        { title: "Rating", icon: "emoji_events" },
+        { title: "Soccer", icon: "sports_soccer" },
+        { title: "Football", icon: "sports_football" },
+        { title: "Tennis", icon: "sports_tennis" },
       ],
     };
   },
