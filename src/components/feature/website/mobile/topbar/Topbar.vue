@@ -3,7 +3,7 @@
     <TopbarIconLink linkUrl="https://github.com/KOSIDOCS/MI" icon="github" />
     <TopbarTitle />
     <TopbarIconLink
-      linkUrl="https://www.instagram.com/kosidocs/"
+      linkUrl="https://www.instagram.com/kosidev/"
       icon="instagram"
     />
   </StyledWrapper>

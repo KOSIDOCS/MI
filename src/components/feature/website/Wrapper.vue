@@ -37,7 +37,7 @@ export default {
         {
           id: 1,
           name: "dropdown-select",
-          collab: "kosidocs",
+          collab: "kosidev",
           image: "https://github.com/KOSIDOCS.png",
           component: DropdownSelect,
           background: "#461d67",
@@ -46,7 +46,7 @@ export default {
         {
           id: 2,
           name: "Hover-ticket",
-          collab: "kosidocs",
+          collab: "kosidev",
           image: "https://github.com/KOSIDOCS.png",
           component: HoverTicket,
           background: "#000",

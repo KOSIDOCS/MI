@@ -1,7 +1,7 @@
 <template>
   <Wrapper>
     <Collab
-      href="https://instagram.com/kosidocs"
+      href="https://www.instagram.com/kosidev/"
       target="_blank"
       v-tippy
       content="@kosidocs"

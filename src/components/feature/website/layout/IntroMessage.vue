@@ -8,7 +8,7 @@
       >Micro Interactions or MI, is a showcase of my daily practice code piece.
       The aim is to share my resources with other dev.</CardText
     >
-    <CardLink href="https://www.instagram.com/kosidocs/" target="_blank">
+    <CardLink href="https://www.instagram.com/kosidev/" target="_blank">
       <span>See on Instagram</span>
     </CardLink>
   </Wrapper>

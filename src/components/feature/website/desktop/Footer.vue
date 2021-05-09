@@ -15,13 +15,13 @@
           <div>
             <ProjectTitle>Meow</ProjectTitle>
             <ProjectDescription>
-             Job Board Platform built in React with Styled Components.
+            Job Board Platform built in React with Styled Components.
             </ProjectDescription>
           </div>
         </ProjectCard>
         <ProjectCard
           background="#8e6ecd"
-           href="https://github.com/KOSIDOCS/"
+          href="https://kosidev.com/"
           target="_blank"
         >
           <ProjectIcon>
@@ -53,7 +53,7 @@
             v-tippy="{ distance: 20 }"
             content="Instagram"
             @click="
-              handleSocialButtonClick('https://www.instagram.com/kosidocs/')
+              handleSocialButtonClick('https://www.instagram.com/kosidev/')
             "
             class="icofont-instagram"
           />
